@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/dist/jquery-1.12.0.min.js"></script>
+		<script src="js/dist/jquery.mobile-1.4.5.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<form method="post">
+					<div class="ui-field-contain">
+						<label for="search" class="ui-hidden-accessible">Rechercher un produit</label>
+						<input type="search" name="search" id="search" placeholder="Rechercher un produit">
+					</div>
+				</form> 
+				<a href="#bar-code-scan" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext">Scanner un code-barres</a>
+				
+			</div>
+
+			<div data-role="main" class="ui-content">
+				<h2>Liste de course maison</h2>
+				<ul data-role="listview" data-inset="true">
+					<li>
+						<a href="#product-detail" data-transition="pop">
+							<img src="img/bread.png">
+							<h2>Pain</h2>
+							<p>Ajouté par Bruce</p>
+							<span class="ui-li-count">2</span>
+						</a>
+						<a href="#" data-icon="star">Ajouter aux favoris</a>
+					</li>
+					<li>
+						<a href="#product-detail" data-transition="pop">
+							<img src="img/milk.png">
+							<h2>Lait</h2>
+							<p>Ajouté par Willis</p>
+							<span class="ui-li-count">4</span>
+						</a>
+						<a href="#"  data-icon="star">Ajouter aux favoris</a>
+					</li>
+					<li>
+						<a href="#product-detail" data-transition="pop" >
+							<img src="img/apple.png">
+							<h2>Pommes</h2>
+							<p>Ajouté par moi</p>
+							<span class="ui-li-count">10</span>
+						</a>
+						<a href="#" data-icon="star">Ajouter aux favoris</a>
+					</li>
+				</ul>
+			</div>
+			<div data-role="footer" style="text-align: center;">
+				<a href="#fav-list" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-notext" data-transition="pop">Favoris</a>
+				<a href="#" class="ui-btn ui-corner-all ui-icon-power ui-btn-icon-notext">Se déconnecter</a>
+			</div>
+		</div>
+
+		<div data-role="page" id="product-detail" data-dialog="true"></div>
+		<div data-role="page" id="fav-list" data-dialog="true"></div>
+		<div data-role="page" id="bar-code-scan"></div>    
+		
+		<script src="js/include-product-detail.js"></script>
+		<script src="js/include-fav-list.js"></script>
+		<script src="js/include-bar-code-scan.js"></script>
+	</body>
+</html>
