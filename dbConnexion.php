@@ -16,14 +16,4 @@
   {
     	die( "Erreur ! : " . $e->getMessage() );
   }
-  
-	$sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password)';
-	
-	$blabla = 'hahahahah';
-	$response = $dbh->prepare($sql);
-	$response->bindParam(':listName', $blabla, PDO::PARAM_STR, 80);
-	$response->bindParam(':password', $blabla, PDO::PARAM_STR, 255);
-	$response->execute();
-
-
 ?>
