@@ -3,9 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
+		
+        <link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="css/dist/custom-css.min.css">
+        <link rel="stylesheet" href="css/dist/jquery.mobile.icons.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<script src="js/dist/jquery-1.12.0.min.js"></script>
+		
+        <script src="js/dist/jquery-1.12.0.min.js"></script>
 		<script src="js/dist/jquery.mobile-1.4.5.min.js"></script>
 	</head>
 	<body>
@@ -17,12 +21,12 @@
 						<input type="search" name="search" id="search" placeholder="Rechercher un produit">
 					</div>
 				</form> 
-				<a href="#bar-code-scan" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext">Scanner un code-barres</a>
+				
 				
 			</div>
 
 			<div data-role="main" class="ui-content">
-				<h2>Liste de course maison</h2>
+				<h4 id="list-title">Liste de course maison</h2>
 				<ul data-role="listview" data-inset="true">
 					<li>
 						<a href="#product-detail" data-transition="pop">
@@ -54,8 +58,9 @@
 				</ul>
 			</div>
 			<div data-role="footer" style="text-align: center;">
-				<a href="#fav-list" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-notext" data-transition="pop">Favoris</a>
-				<a href="#" class="ui-btn ui-corner-all ui-icon-power ui-btn-icon-notext">Se déconnecter</a>
+                <a href="#bar-code-scan" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">Scanner un code-barres</a>
+				<a href="#fav-list" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-transition="pop">Favoris</a>
+				<a href="#" class="ui-btn ui-corner-all ui-icon-power ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">Se déconnecter</a>
 			</div>
 		</div>
 

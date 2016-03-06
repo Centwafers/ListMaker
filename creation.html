@@ -1,19 +1,16 @@
 <div data-role="header">
-	<a href="#connexion" class="ui-btn ui-icon-back ui-btn-icon-left"></a>
-	<h3>Créer une liste</h3>
+	<a href="#connexion" class="ui-btn ui-icon-back ui-btn-icon-left ui-nodisc-icon ui-alt-icon"></a>
+	<h3>ListMaker</h3>
 </div>
 <div data-role="main" class="ui-content">
 	<form method="post">
-		<label for="username">Nom d'utilisateur</label>
-		<input type="text" name="username" id="username" data-clear-btn="true">
+		<input type="text" name="username" id="username" placeholder="Non d'utilisateur">
 
-		<label for="listName">Nom de la liste</label>
-		<input type="text" name="listName" id="listName" data-clear-btn="true">
+		<input type="text" name="listName" id="listName" placeholder="Nom de la liste">
 
-		<label for="password">Mot de passe</label>
-		<input type="text" name="password" id="password" data-clear-btn="true">
+		<input type="text" name="password" id="password" placeholder="Mot de passe">
 
-		<input type="submit" value="Créer">
+		<a href="#" class="ui-btn">Créer</a> <!-- Faire la redirection vers la page home avec la liste créée -->
 	</form>
 </div>
 <div data-role="footer">
