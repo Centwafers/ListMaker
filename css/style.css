@@ -1,0 +1,45 @@
+/*CONNEXION*/
+
+#connexion{
+    background-color: #ffffff;
+}
+
+form{
+    width: 75%;
+    margin: auto;
+    margin-top: 20%;
+}
+
+#btn-connexion{
+    color: #ffffff;
+    background-color: #66CDAA;
+    opacity: 0.8;
+}
+#btn-connexion:hover{
+    opacity: 0.5;
+}
+
+#creation-link{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);   
+}
+
+#text-nolist{
+    color: #696969;
+    text-align: center;   
+}
+
+#btn-creation{
+    color: #ffffff;
+    background-color: #3a5bff;
+    opacity: 0.8;
+}
+#btn-creation:hover{
+    opacity: 0.5;
+}
+
+
+
+

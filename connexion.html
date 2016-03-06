@@ -3,42 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
+		
+        <link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
 		<link rel="stylesheet" href="css/style.css">
-		<script src="js/dist/jquery-1.12.0.min.js"></script>
+		
+        <script src="js/dist/jquery-1.12.0.min.js"></script>
 		<script src="js/dist/jquery.mobile-1.4.5.min.js"></script>
 	</head>
 	<body>
-
 		
-		<div data-role="page" id="connexion">
+		<div data-role="page" id="connexion-header">
 			<div data-role="header">
 				<h3>Connexion</h3>
 			</div>
-			<div data-role="main" class="ui-content">
+			<div data-role="main" class="ui-content" id="connexion">
 				<form method="post">
-					<label for="username">Nom d'utilisateur</label>
-					<input type="text" name="username" id="username" data-clear-btn="true">
+					<input type="text" name="username" id="username" placeholder="Nom d'utilisateur" id="username">
 
-					<label for="listName">Nom de la liste</label>
-					<input type="text" name="listName" id="listName" data-clear-btn="true">
+					<input type="text" name="listName" id="listName" placeholder="Nom de la liste">
 
-					<label for="password">Mot de passe</label>
-					<input type="text" name="password" id="password" data-clear-btn="true">
+					<input type="text" name="password" id="password" placeholder="Mot de passe">
+                    
+                    <a id="btn-connexion" class="ui-btn test">Connexion</a>
 
-					<input type="submit" value="Connexion">
 				</form>
-
-				<h3>Pas encore de liste ?</h3>
-				<a href="#creation" class="ui-btn ui-btn-b">Créer une liste</a>
-			</div>
-			<div data-role="footer">
-				<h4>ListMaker</h4>
+                <div id="creation-link">
+                    <h4 id="text-nolist">Pas encore de liste?</h4>
+                    <a id="btn-creation" href="#creation" class="ui-btn">Créer une liste</a>
+                </div>
 			</div>
 		</div>
 
 		<div data-role="page" id="creation"></div>
 		
 		<script src="js/include-creation.js"></script>
+        <script src="js/design-connexion.js"></script>
 	</body>
 </html>
