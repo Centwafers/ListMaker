@@ -1,7 +1,7 @@
 <?php
  require('dbConnexion.php');
 $msg = "fail";
-if(isset($_POST['listName']) && isset($_POST['password']))
+if(isset($_GET['listName']) && isset($_GET['password']))
 {	
 		$listName = $_POST['listName'];
 		$password = md5($_POST['password']);
