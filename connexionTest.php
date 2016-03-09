@@ -11,7 +11,7 @@
  		$response->bindParam(':listName', $listName, PDO::PARAM_STR, 80);
  		$response->bindParam(':password', $password, PDO::PARAM_STR, 255);
          	
-         	$response->execute();
+         	$response=$response->execute();
          	$data=$response->fetch();
          	
          	var_dump($data);
