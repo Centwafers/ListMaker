@@ -22,7 +22,7 @@ document.getElementById("connexion_form").onclick = function blockForm(){
         $.ajax({
             url : 'connexion.php', 
             type : 'POST',
-            data : "listname="+listName+"&password="+password,
+            data : "listName="+listName+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir
 
             success : function(code_html,statut)
