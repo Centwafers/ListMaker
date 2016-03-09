@@ -3,6 +3,7 @@
 $msg = "fail";
 if(isset($_GET['listName']) && isset($_GET['password']))
 {	
+		$msg = 'isset ok';
 		$listName = $_GET['listName'];
 		$password = $_GET['password'];
 		$listName = htmlentities($listname);
