@@ -4,7 +4,6 @@
   
   if(isset($_POST['listName']) && isset($_POST['password']))
   {	
-    $msg = "fail2";
    	$listName = $_POST['listName'];
    	$password = $_POST['password'];
    	$listName = htmlentities($listName);
