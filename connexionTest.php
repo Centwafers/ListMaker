@@ -12,6 +12,7 @@
  		$response->bindParam(':password', $password, PDO::PARAM_STR, 255);
          	
          	$response=$response->execute();
+         	echo $response;
          	$data=$response->fetch();
          	
          	var_dump($data);
