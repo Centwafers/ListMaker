@@ -10,4 +10,8 @@
 	//$response->bindParam(':password', 'unTest', PDO::PARAM_STR);
 	//$response->execute();
 	
+	$sql= "SELECT 'listName' FROM LogList WHERE listName = 'unTest'";
+	echo $dbh->query($sql);
+	var_dump($dbh->query($sql));
+	
 ?>
