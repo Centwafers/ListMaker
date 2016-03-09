@@ -27,7 +27,7 @@ document.getElementById("connexion_form").onclick = function blockForm(){
 
             success : function(code_html,statut)
             {	
-            	console.log(code_html);
+            	
                 if(code_html == get_success)
 		{
                     document.location.href="home.html";
