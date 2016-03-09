@@ -14,5 +14,6 @@
 	$response = $dbh->query($sql);
 	$result = $response->fetch();
 	echo $result['listName'];
+	var_dump($result);
 	
 ?>
