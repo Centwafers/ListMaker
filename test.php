@@ -13,6 +13,5 @@
 	$sql= "SELECT 'listName' FROM LogList WHERE listName = 'unTest'";
 	$response = $dbh->query($sql);
 	echo $response['listName'];
-	var_dump($dbh->query($sql));
 	
 ?>
