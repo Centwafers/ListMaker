@@ -6,7 +6,7 @@
  		$msg = 'isset ok';
  		$listName = $_GET['listName'];
  		$password = $_GET['password'];
- 		$listName = htmlentities($listname);
+ 		$listName = htmlentities($listName);
  		$response=$dbh->prepare('SELECT listName, password FROM LogList WHERE listName = :listName AND password = :password');
  		$response->bindValue(':listName', $listName, PDO::PARAM_STR);
  		$response->bindValue(':password', $password, PDO::PARAM_STR);
