@@ -18,21 +18,21 @@ document.getElementById("connexion_form").onclick = function blockForm(){
     }
     else
     {
-		var get_success = 'success';
+	var get_success = 'success';
         $.ajax({
             url : 'connexion.php', 
-            type : 'POST',
+            type : 'GET',
             data : "listname="+listname+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir
 
             success : function(code_html,statut)
             {				
                 if(code_html == get_success)
-				{
+		{
                     document.location.href="home.html";
                 }
                 else 
-				{
+		{
                     alert('La connexion a échoué, veuillez réessayer');
                 }
             },
