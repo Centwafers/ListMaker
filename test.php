@@ -1,5 +1,5 @@
 <?php
-  require('bdConnexion.php');
+  require('dbConnexion.php');
   
   //test insert into
   $sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password)';
