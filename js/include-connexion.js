@@ -18,10 +18,10 @@ document.getElementById("connexion_form").onclick = function blockForm(){
     }
     else
     {
-		var get_success = 'Success';
+		var get_success = 'success';
         $.ajax({
             url : 'connexion.php', 
-            type : 'GET',
+            type : 'POST',
             data : "username="+username+"&listname="+listname+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir
 
