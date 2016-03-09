@@ -1,16 +1,24 @@
 <?php
-	require 'dbConnexion.php';
-	$stmt = $dbh->prepare("SELECT * FROM users WHERE username=:username AND password=:password");
-		$stmt->bindParam('username',"test",PDO::PARAM_STR,20);
-		$stmt->bindParam('password',"test",PDO::PARAM_STR,20);
-		$stmt->execute();
-		
-		if($stmt->rowCount() == 1)
-		{
-			echo 'success';
-		}
-		else
-		{
-			echo 'fail';
-		}
+  require('dbConnexion.php');
+  $msg = "fail";
+  
+  if(isset($_POST['listName']) && isset($_POST['password']))
+  {	
+   	$listName = $_POST['listName'];
+   	$password = $_POST['password'];
+   	$listName = htmlentities($listName);
+   	$response=$dbh->prepare('SELECT listName, password FROM LogList WHERE listName = :listName AND password = :password');
+   	$response->bindValue(':listName', $listName, PDO::PARAM_STR);
+   	$response->bindValue(':password', $password, PDO::PARAM_STR);
+    
+    	$response->execute();
+  
+    	$data=$response->fetch();
+  
+   	if ($data['password'] == $password)
+   	{
+   			$msg="success";
+   	}
+  }
+  echo $msg;
 ?>
