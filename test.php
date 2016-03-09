@@ -12,6 +12,7 @@
 	
 	$sql= "SELECT 'listName' FROM LogList WHERE listName = 'unTest'";
 	$response = $dbh->query($sql);
-	echo $response->fetch();
+	$result = $response->fetch();
+	echo $result['listName'];
 	
 ?>
