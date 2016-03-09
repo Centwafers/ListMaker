@@ -1,7 +1,7 @@
 document.getElementById("connexion_form").onclick = function blockForm(){
     
     var username = document.getElementById("username").value;
-    var listname = document.getElementById("listName").value;
+    var listName = document.getElementById("listName").value;
     var password = document.getElementById("password").value;
     
     if(username.length===0)
