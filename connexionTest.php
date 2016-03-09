@@ -13,7 +13,7 @@
          	
          	$response=$response->execute();
          	echo $response;
-         	$data=$response->fetch();
+         	//$data=$response->fetch();
          	
          	var_dump($data);
          	var_dump($response);
