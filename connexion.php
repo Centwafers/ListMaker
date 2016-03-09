@@ -1,25 +1,17 @@
 <?php
- require('dbConnexion.php');
-$msg = "fail";
-if(isset($_GET['listName']) && isset($_GET['password']))
-{	
-		$msg = 'isset ok';
-		$listName = $_GET['listName'];
-		$password = $_GET['password'];
-		$listName = htmlentities($listname);
-		$response=$dbh->prepare('SELECT listName,password FROM LogList WHERE listName = :listName AND password = :password');
-		$response->bindParam(':listName', $listName, PDO::PARAM_STR, 80);
-		$response->bindParam(':password', $password, PDO::PARAM_STR, 255);
-        	
-        	$response->execute();
-        	$data=$response->fetch();
-        	
-        	var_dump($data);
-		if ($data['password'] == $password){
-			$msg="success";
-		}
+require('dbConnexion.php');
+$stmt = $dbh->prepare("SELECT * FROM users WHERE (username=:username OR mail=:username) AND password=:password");
+	$stmt->bindParam('username', test ,PDO::PARAM_STR,20);
+	$stmt->bindParam('password', test ,PDO::PARAM_STR,20);
+	$stmt->execute();
+	
+if($stmt->rowCount() == 1)
+{
+	echo 'success';
 }
-echo $msg;
-
+else
+{
+	echo 'fail';
+}
 
 ?>
