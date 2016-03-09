@@ -22,7 +22,7 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 			$response->bindParam(':listName', $listName, PDO::PARAM_STR, 80);
 			$response->bindParam(':password', $password, PDO::PARAM_STR, 255);
 			$response->execute();
-			echo 'Success';
+			echo 'success';
 		}
 		else
 		{
@@ -32,13 +32,11 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 	else
 	{
 		echo 'Les mots de passe ne correspondent pas.';
-		header('Location: connexion.html');
 	}
 }
 else
 {
 	echo 'Un des champs n\'est pas correct';
-	header('Location: connexion.html');
 }
 
 ?>
