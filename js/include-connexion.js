@@ -34,7 +34,7 @@ document.getElementById("connexion_form").onclick = function blockForm(){
                 }
                 else 
 		{
-                    alert('La connexion a échoué, veuillez réessayer');
+                    alert('Nom d\'utilisateur ou mot de pas incorrect.');
                 }
             },
             error : function(resultat, statut, erreur)
