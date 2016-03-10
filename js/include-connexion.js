@@ -2,7 +2,7 @@ document.getElementById("connexion_form").onclick = function blockForm(){
     
     var username = document.getElementById("username").value;
     var listName = document.getElementById("listName").value;
-    var password = document.getElementById("password").value;
+    var password = window.md5(document.getElementById('password').value);
     
     if(username.length===0)
     {
@@ -27,7 +27,7 @@ document.getElementById("connexion_form").onclick = function blockForm(){
 
             success : function(code_html,statut)
             {	
-            	
+            	console.log(password);
                 if(code_html == get_success)
 		{
                     document.location.href="home.html";
