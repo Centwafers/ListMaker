@@ -19,12 +19,12 @@ document.getElementById("connexion_form").onclick = function blockForm(){
     else
     {
 	var get_success = 'success';
+	console.log(password);
         $.ajax({
             url : 'connexion.php', 
             type : 'POST',
             data : "listName="+listName+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir
-	console.log(password);
             success : function(code_html,statut)
             {	
                 if(code_html == get_success)
