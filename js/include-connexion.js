@@ -24,10 +24,9 @@ document.getElementById("connexion_form").onclick = function blockForm(){
             type : 'POST',
             data : "listName="+listName+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir
-
+	console.log(password);
             success : function(code_html,statut)
             {	
-            	console.log(password);
                 if(code_html == get_success)
 		{
                     document.location.href="home.html";
