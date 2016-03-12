@@ -36,7 +36,7 @@ document.getElementById("connexion_form").onclick = function blockForm(){
                 }
                 else 
 		{
-                    alert('Nom d\'utilisateur ou mot de pas incorrect.');
+                    alert('Nom de liste ou mot de pas incorrect.');
                 }
             },
             error : function(resultat, statut, erreur)
