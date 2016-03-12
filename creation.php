@@ -25,8 +25,10 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 			$response = $dbh->prepare($sql);
 			$response->bindParam(':listName', "azodndjaz", PDO::PARAM_STR, 80);
 			$response->bindParam(':password', "azzaodjaz", PDO::PARAM_STR, 255);
-			echo $response->execute();
-			echo 'success';
+			$bol = $response->execute();
+			echo $bol;
+			echo "testttt";
+			echo 'success22';
 			/*
 		}
 		else
