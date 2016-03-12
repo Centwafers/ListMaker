@@ -11,14 +11,12 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 		
 		$listName = "azodnzaodjaz";
 		$password = "adoaodjad";
-		
-		$listName = htmlentities($listName);
-		
+
 		$sql = 'SELECT listName FROM LogList WHERE listName=:listName';
 		$response = $dbh->prepare($sql);
 		$response->bindParam(':listName', $listName, PDO::PARAM_STR,80);
 		$response->execute();
-		
+		echo count($response);
 		if(count($response) === 0)
 		{
 			$sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password))';
