@@ -16,7 +16,7 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 		$response = $dbh->prepare($sql);
 		$response->bindParam(':listName', $listName, PDO::PARAM_STR,80);
 		$response->execute();
-		echo count($response);
+		echo $response->rowCount();
 		if(count($response) === 0)
 		{
 			$sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password))';
