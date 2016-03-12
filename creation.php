@@ -1,11 +1,11 @@
 <?php
 require('dbConnexion.php');
-/* 
+/*
 if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['password2']))
 {
 	if($_POST['password'] == $_POST['password2'])
 	{
-*/
+
 		//$listName = $_POST['listName'];
 		//$password = md5($_POST['password']);
 		
@@ -19,19 +19,21 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 		
 		if($response->rowCount() === 0)
 		{
+		*/
 			$sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password))';
 		
 			$response = $dbh->prepare($sql);
-			$response->bindParam(':listName', $listName, PDO::PARAM_STR, 80);
-			$response->bindParam(':password', $password, PDO::PARAM_STR, 255);
-			$response->execute();
+			$response->bindParam(':listName', "azodndjaz", PDO::PARAM_STR, 80);
+			$response->bindParam(':password', "azzaodjaz", PDO::PARAM_STR, 255);
+			echo $response->execute();
 			echo 'success';
+			/*
 		}
 		else
 		{
 			echo 'Cette liste existe déjà';
 		}
-/*
+
 	}
 	else
 	{
