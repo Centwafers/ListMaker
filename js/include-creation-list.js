@@ -1,8 +1,8 @@
 document.getElementById("creationForm").onclick = function blockForm(){
     console.log("mmm");
-    var listName = document.getElementById("listName").value;
-    var password = document.getElementById('password').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.
-	var password2 = document.getElementById('password2').value;
+    var listName = document.getElementById("listNameCreation").value;
+    var password = document.getElementById('passwordCreation').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.
+	var password2 = document.getElementById('password2Creation').value;
 
 	var site = 'http://listmaker-stkl.esy.es/';
     var dossier = 'creation.php';
