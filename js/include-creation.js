@@ -1,3 +1,7 @@
+$(function(){
+	$("#creation").load("creation.html"); 
+});
+
 document.getElementById("inscriptionForm").onclick = function blockForm(){
     
     var listName = document.getElementById("listName").value;
