@@ -2,14 +2,14 @@ $(function(){
 	$("#creation").load("creation.html"); 
 });
 
-document.getElementById("inscriptionForm").onclick = function blockForm(){
+document.getElementById("creationForm").onclick = function blockForm(){
     
     var listName = document.getElementById("listName").value;
     var password = document.getElementById('password').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.
 	var password2 = document.getElementById('password2').value;
 
 	var site = 'http://listmaker-stkl.esy.es/';
-    var dossier = 'inscription.php';
+    var dossier = 'creation.php';
 	
     if (listName.length===0)
     {
