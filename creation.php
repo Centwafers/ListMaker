@@ -1,16 +1,16 @@
 <?php
 require('dbConnexion.php');
-
- $_POST['listName'] = "test2zdzqdni";
- $_POST['password'] = "test2";
- $_POST['password2'] = "test2";
- 
+/* 
 if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['password2']))
 {
 	if($_POST['password'] == $_POST['password2'])
 	{
-		$listName = $_POST['listName'];
-		$password = md5($_POST['password']);
+*/
+		//$listName = $_POST['listName'];
+		//$password = md5($_POST['password']);
+		
+		$listName = "azodnzaodjaz";
+		$password = "adoaodjad";
 		
 		$listName = htmlentities($listName);
 		
@@ -33,6 +33,7 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 		{
 			echo 'Cette liste existe déjà';
 		}
+/*
 	}
 	else
 	{
@@ -43,5 +44,5 @@ else
 {
 	echo 'Un des champs n\'est pas correct';
 }
-
+*/
 ?>
