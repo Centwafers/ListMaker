@@ -1,9 +1,9 @@
 <?php
 require('dbConnexion.php');
 
- $_POST['listName'] = test;
- $_POST['password'] = test;
- $_POST['password2'] = test;
+ $_POST['listName'] = test2;
+ $_POST['password'] = test2;
+ $_POST['password2'] = test2;
  
 if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['password2']))
 {
