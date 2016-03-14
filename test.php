@@ -6,8 +6,10 @@
    $sql = "INSERT INTO LogList(listName, password) VALUES(:listName, :password)";
 	//$dbh->query($sql);
 	$response = $dbh->prepare($sql);
-	$response->bindParam(':listName', 'unnveoviTest', PDO::PARAM_STR);
-	$response->bindParam(':password', 'unTefnzpest', PDO::PARAM_STR);
+	$var1 = 'unnveoviTest';
+	$var2 ='unTefnzpest';
+	$response->bindParam(':listName', $var1, PDO::PARAM_STR);
+	$response->bindParam(':password',$var2 , PDO::PARAM_STR);
 	$response->execute();
 	
 	//$sql= "SELECT 'listName' FROM LogList WHERE listName = 'unTest'";
