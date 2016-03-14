@@ -13,7 +13,7 @@
       $response->execute();
       if($response->rowCount() === 0)
       {
-        $sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password))';
+        $sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password)';
         $response = $dbh->prepare($sql);
         $response->bindParam(':listName', $listName, PDO::PARAM_STR, 80); 
         $response->bindParam(':password', $password, PDO::PARAM_STR, 255);
