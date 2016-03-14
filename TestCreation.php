@@ -1,11 +1,11 @@
 <?php
   require('dbConnexion.php');
-  if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['password2']))
+  if(isset($_GET['listName']) && isset($_GET['password'])&& isset($_GET['password2']))
   {
-    if($_POST['password'] == $_POST['password2'])
+    if($_GET['password'] == $_GET['password2'])
     {
-      $listName = $_POST['listName'];
-      $password = md5($_POST['password']);
+      $listName = $_GET['listName'];
+      $password = md5($_GET['password']);
       $listName = htmlentities($listName);
       $sql = 'SELECT listName FROM LogList WHERE listName=:listName';
       $response = $dbh->prepare($sql);
