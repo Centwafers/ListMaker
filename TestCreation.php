@@ -23,6 +23,7 @@
       else
       {
       echo 'Cette liste existe déjà';
+      var_dump($response);
       }
     }
     else
