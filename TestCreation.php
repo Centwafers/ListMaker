@@ -11,7 +11,7 @@
       $response = $dbh->prepare($sql);
       $response->bindParam(':listName', $listName, PDO::PARAM_STR,80);
       $response->execute();
-      if(count($response) === 0)
+      if($response->rowCount() === 0)
       {
         $sql = 'INSERT INTO LogList(listName, password) VALUES(:listName, :password))';
         $response = $dbh->prepare($sql);
