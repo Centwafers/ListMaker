@@ -1,5 +1,6 @@
 <?php
 require('dbConnexion.php');
+require('test_input.php');
  
 if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['password2']))
 {
@@ -8,7 +9,7 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 		$listName = $_POST['listName'];
 		$password = md5($_POST['password']);
 		
-		$listName = htmlentities($listName);
+		$listName = test_input($listName);
 		
 		$sql = 'SELECT listName FROM LogList WHERE listName=:listName';
 		$response = $dbh->prepare($sql);
