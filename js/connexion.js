@@ -1,12 +1,13 @@
-document.getElementById("connexion_form").onclick = function blockForm(){
-    
+
+document.getElementById("connexion-btn").onclick = function blockForm(){
+
     var username = document.getElementById("username").value;
-    var listName = document.getElementById("listName").value;
+    var listName = document.getElementById("list-name").value;
     var password = window.md5(document.getElementById('password').value); //le mdp ne doit jamais passer en clair sur le réseau
-    
+
     var site = 'http://listmaker-stkl.esy.es/';
     var dossier = 'connexion.php';
-    
+
     if(username.length===0)
     {
         return alert("Veuillez entrer un nom d'utilisateur");
@@ -21,9 +22,10 @@ document.getElementById("connexion_form").onclick = function blockForm(){
     }
     else
     {
-	var get_success = 'success';
+        var get_success = 'success';
 
-        $.ajax({
+        $.ajax(
+        {
             url : site+dossier, 
             type : 'POST',
             data : "listName="+listName+"&password="+password,
@@ -31,12 +33,13 @@ document.getElementById("connexion_form").onclick = function blockForm(){
             success : function(resultat,statut)
             {	
                 if(resultat == get_success)
-		{
+                {
                     document.location.href="home.html";
                 }
                 else 
-		{
+                {
                     alert('Nom de liste ou mot de pas incorrect.');
+                    
                 }
             },
             error : function(resultat, statut, erreur)
@@ -46,3 +49,4 @@ document.getElementById("connexion_form").onclick = function blockForm(){
         });
     }
 }
+

@@ -13,10 +13,18 @@ form{
     transform: translate(-50%);  
 }
 
-#text-nolist{
+#connexion-btn, #creation-link-btn{
+    background-color: #5CBCF6;
+    border-color: #5CBCF6;
+    color: #ffffff;
+}
+
+#text-no-list{
     text-shadow: 0 0 0;
     text-align: center;   
 }
+
+
 
 /*HOME*/
 
