@@ -11,7 +11,7 @@ if(isset($_GET['idLogList']))
 	
 	foreach($response as $elem)
 	{
-		var_dump($elem);
+		echo json_encode($elem);
 	}
 }
 
