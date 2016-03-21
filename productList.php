@@ -9,9 +9,10 @@ if(isset($_GET['idLogList']))
 	$response->bindValue(':idLogList', $_GET['idLogList'], PDO::PARAM_INT);
 	$response->execute();
 	
-	var_dump($response);
-	$response->query();
-	var_dump($response);
+	foreach($response as $elem)
+	{
+		var_dump($elem);
+	}
 }
 
 ?>
