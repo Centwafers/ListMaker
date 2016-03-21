@@ -1,6 +1,6 @@
 <?php
 
-require('bdConnexion.php');
+require('dbConnexion.php');
 
 if(isset($_GET['idLogList']))
 {
