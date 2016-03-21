@@ -2,7 +2,7 @@
 
 require('bdConnexion.php');
 
-if(isset($_GET['idLogList'])
+if(isset($_GET['idLogList']))
 {
 	$sql = 'SELECT idProduct, quantity FROM ProductList WHERE idLogList = :idLogList';
 	$response = $dbh->prepare($sql);
