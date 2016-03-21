@@ -10,6 +10,8 @@ if(isset($_GET['idLogList']))
 	$response->execute();
 	
 	var_dump($response);
+	$response->query();
+	var_dump($response);
 }
 
 ?>
