@@ -16,7 +16,7 @@ document.getElementById("connexion-btn").onclick = function blockForm(){
     {
         return alert("Veuillez entrer le nom de votre liste");
     }
-    else if (password.length===0)
+    else if (password.length===0) //inutile: le md5 d'une chaine vide n'est jamais vide
     {
         return alert("Veuillez entrer votre mot de passe");
     }
@@ -26,20 +26,20 @@ document.getElementById("connexion-btn").onclick = function blockForm(){
 
         $.ajax(
         {
-            url : site+dossier, 
+            url : site+dossier,
             type : 'POST',
             data : "listName="+listName+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir
             success : function(resultat,statut)
-            {	
+            {
                 if(resultat == get_success)
                 {
                     document.location.href="home.html";
                 }
-                else 
+                else
                 {
                     alert('Nom de liste ou mot de pas incorrect.');
-                    
+
                 }
             },
             error : function(resultat, statut, erreur)
@@ -49,4 +49,3 @@ document.getElementById("connexion-btn").onclick = function blockForm(){
         });
     }
 }
-
