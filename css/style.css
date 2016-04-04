@@ -8,9 +8,15 @@ form{
 
 #creation-link{
     position: absolute;
+    width: 75%;
     bottom: 5%;
     left: 50%;
-    transform: translate(-50%);  
+    transform: translate(-50%);
+}
+
+#text-no-list{
+    text-shadow: 0 0 0;
+    text-align: center;
 }
 
 #connexion-btn, #creation-link-btn{
@@ -19,17 +25,8 @@ form{
     color: #ffffff;
 }
 
-#text-no-list{
-    text-shadow: 0 0 0;
-    text-align: center;   
-}
+
 
 
 
 /*HOME*/
-
-
-
-
-
-
