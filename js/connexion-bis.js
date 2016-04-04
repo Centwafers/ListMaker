@@ -8,7 +8,6 @@ $(document).ready(function(){
     var listName = $("#list-name").val();
     var password = $.md5($("#password").val()); //le mdp ne doit jamais passer en clair sur le réseau
 
-    alert(password);
     if((username.length===0)||(listName.length===0)){
         errorAnimation("#connexion-btn");
     }else{
