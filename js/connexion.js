@@ -2,7 +2,7 @@
 document.getElementById("connexion-btn").onclick = function blockForm(){
 
     var username = document.getElementById("username").value;
-    var listName = document.getElementById("list-name").value;
+    var listName = document.getElementById("listName").value;
     var password = window.md5(document.getElementById('password').value); //le mdp ne doit jamais passer en clair sur le réseau
 
     var site = 'http://listmaker-stkl.esy.es/';

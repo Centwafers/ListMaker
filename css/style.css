@@ -19,10 +19,24 @@ form{
     text-align: center;
 }
 
-#connexion-btn, #creation-link-btn{
+#connexion-btn, #creation-link-btn, #creation-btn{
     background-color: #5CBCF6;
     border-color: #5CBCF6;
     color: #ffffff;
+}
+
+#fa-icon{
+  background-color: rgba(0,0,0,0.0);
+  border-color: rgba(0,0,0,0.0);
+  color: #ffffff;
+  box-shadow: 0 0 0;
+  font-size: 20px;
+}
+
+#left-icon{
+  background-color: rgba(0,0,0,0.0);
+  border-color: rgba(0,0,0,0.0);
+  box-shadow: 0 0 0;
 }
 
 

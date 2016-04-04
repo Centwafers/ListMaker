@@ -5,7 +5,7 @@ $(document).ready(function(){
     var dossier = 'connexion.php';
 
     var username = $("#username").val();
-    var listName = $("#list-name").val();
+    var listName = $("#listName").val();
     var password = $.md5($("#password").val()); //le mdp ne doit jamais passer en clair sur le réseau
 
     if((username.length===0)||(listName.length===0)){
