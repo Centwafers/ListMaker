@@ -19,8 +19,9 @@ $(document).ready(function(){
           password: password
       },
       function(data, status){
-          if(data == get_success){
+          if(data != get_success){
             successAnimation("#connexion-btn");
+            //stock session local
             document.location.href="home.html";
           }else{
             errorAnimation("#connexion-btn");
