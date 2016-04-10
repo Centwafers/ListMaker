@@ -15,7 +15,8 @@
     
     if($response->rowCount() == 1)
 		{
-		  $msg="success";
+		$val = $response->fetch();
+		  $msg= $val['hashSession'];
 		}
   
     /*
