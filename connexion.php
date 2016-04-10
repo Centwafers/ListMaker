@@ -5,8 +5,8 @@
   
   if(isset($_GET['listName']) && isset($_GET['password']))
   {	
-   	$listName = test_input($_POST['listName']);
-   	$password = test_input($_POST['password']);
+   	$listName = test_input($_GET['listName']);
+   	$password = test_input($_GET['password']);
    	
    	$response=$dbh->prepare('SELECT listName, password FROM LogList WHERE listName = :listName AND password = :password');
    	$response->bindValue(':listName', $listName, PDO::PARAM_STR);
