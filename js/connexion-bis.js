@@ -22,10 +22,12 @@ $(document).ready(function(){
           if(data == get_fail){
            errorAnimation("#connexion-btn");
           }else{
-            successAnimation("#connexion-btn");
+            /*successAnimation("#connexion-btn");
             var storage = window.localStorage;
             storage.setItem(Session, data);
-            document.location.href="home.html";
+            
+            document.location.href="home.html";*/
+            alert(data);
           }
       });
       return false; //pour que le formulaire ne se recharge pas !
