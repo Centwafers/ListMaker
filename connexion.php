@@ -3,7 +3,7 @@
   require('test_input.php');
   $msg = "fail";
   
-  if(isset($_POST['listName']) && isset($_POST['password']))
+  if(isset($_GET['listName']) && isset($_GET['password']))
   {	
    	$listName = test_input($_POST['listName']);
    	$password = test_input($_POST['password']);
