@@ -22,9 +22,9 @@ $(document).ready(function(){
           if(data == get_fail){
            errorAnimation("#connexion-btn");
           }else{
-            
-             successAnimation("#connexion-btn");
-            //stock session local
+            successAnimation("#connexion-btn");
+            var storage = window.localStorage;
+            storage.setItem(Session, data);
             document.location.href="home.html";
           }
       });
