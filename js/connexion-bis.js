@@ -11,7 +11,7 @@ $(document).ready(function(){
     if((username.length===0)||(listName.length===0)){
         errorAnimation("#connexion-btn");
     }else{
-      var get_success = 'success';
+      var get_fail = 'fail';
 
       $.post(site+dossier,
       {
@@ -19,12 +19,13 @@ $(document).ready(function(){
           password: password
       },
       function(data, status){
-          if(data != get_success){
-            successAnimation("#connexion-btn");
+          if(data == get_fail){
+           errorAnimation("#connexion-btn");
+          }else{
+            
+             successAnimation("#connexion-btn");
             //stock session local
             document.location.href="home.html";
-          }else{
-            errorAnimation("#connexion-btn");
           }
       });
       return false; //pour que le formulaire ne se recharge pas !
