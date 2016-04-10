@@ -1,5 +1,5 @@
 
-/*CONNEXION*/
+/*CONNEXION & INSCRIPTION*/
 form{
     width: 75%;
     margin: auto;
@@ -38,9 +38,10 @@ form{
   border-color: rgba(0,0,0,0.0);
   box-shadow: 0 0 0;
 }
-
-
-
-
-
 /*HOME*/
+#footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
