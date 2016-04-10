@@ -3,10 +3,10 @@
   require('test_input.php');
   $msg = "fail";
   
-  if(isset($_GET['listName']) && isset($_GET['password']))
+  if(isset($_POST['listName']) && isset($_POST['password']))
   {	
-   	$listName = test_input($_GET['listName']);
-   	$password = test_input($_GET['password']);
+   	$listName = test_input($_POST['listName']);
+   	$password = test_input($_POST['password']);
    	
    	$response=$dbh->prepare('SELECT * FROM LogList WHERE listName = :listName AND password = :password');
    	$response->bindValue(':listName', $listName, PDO::PARAM_STR);
