@@ -1,4 +1,4 @@
-document.getElementById("creation-btn").onclick = function blockForm(){
+document.getElementById("creationBtn").onclick = function blockForm(){
   console.log("mmm");
   var listName = document.getElementById("listNameCreation").value;
   var password = document.getElementById('passwordCreation').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.

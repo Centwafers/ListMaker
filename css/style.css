@@ -51,13 +51,13 @@ form{
   text-align: center;
 }
 
-#search-form{
+#searchForm{
   margin-top: 0;
   margin-left: 20%;
 }
 
 @media screen and (max-width: 450px) {
-  #search-bar-container{
+  #searchBarContainer{
     margin-right: 20%;
   }
 }
