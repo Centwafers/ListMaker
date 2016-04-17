@@ -3,49 +3,49 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-        <link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
-        <link rel="stylesheet" href="css/dist/custom-css.min.css">
-        <link rel="stylesheet" href="css/dist/jquery.mobile.icons.min.css">
-        <link rel="stylesheet" href="css/dist/font-awesome.min.css">
-        
+
+    <link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="css/dist/custom-css.min.css">
+    <link rel="stylesheet" href="css/dist/jquery.mobile.icons.min.css">
+    <link rel="stylesheet" href="css/dist/font-awesome.min.css">
+
 		<link rel="stylesheet" href="css/style.css">
-		
-        <script src="js/dist/jquery-1.12.0.min.js"></script>
+
+    <script src="js/dist/jquery-1.12.0.min.js"></script>
 		<script src="js/dist/jquery.mobile-1.4.5.min.js"></script>
 	</head>
 	<body>
 		<div data-role="page" id="home">
 			<div data-role="header">
-				<form id="search-form" method="post">
-					<div id="search-bar-container" class="ui-field-contain">
-						<label for="search-bar" class="ui-hidden-accessible">Rechercher un produit</label>
-						<input type="search" name="search" id="search-bar" placeholder="Rechercher un produit">
+				<form id="searchForm" method="post">
+					<div id="searchBarContainer" class="ui-field-contain">
+						<label for="searchBar" class="ui-hidden-accessible">Rechercher un produit</label>
+						<input type="search" id="searchBar" placeholder="Rechercher un produit">
 					</div>
-				</form> 
-				
-				
+				</form>
+
+
 			</div>
 
 			<div data-role="main" class="ui-content">
-				<h4 id="list-title">Liste de course maison</h2>
-				<ul data-role="listview" data-inset="true" id="list-content">
+				<h4 id="listTitle">Liste de course maison</h2>
+				<ul data-role="listview" data-inset="true" id="listContent">
 				</ul>
 			</div>
 			<div id="footer" data-role="footer">
-                <a href="#bar-code-scan" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">Scanner un code-barres</a>
-				<a href="#fav-list" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-transition="pop">Favoris</a>
+        <a href="#barCodeScanBtn" class="ui-btn ui-corner-all ui-icon-camera ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">Scanner un code-barres</a>
+				<a href="#favListBtn" class="ui-btn ui-corner-all ui-icon-star ui-btn-icon-notext ui-nodisc-icon ui-alt-icon" data-transition="pop">Favoris</a>
 				<a href="#" class="ui-btn ui-corner-all ui-icon-power ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">Se déconnecter</a>
 			</div>
 		</div>
 
-		<div data-role="page" id="product-detail" data-dialog="true"></div>
-		<div data-role="page" id="fav-list" data-dialog="true"></div>
-		<div data-role="page" id="bar-code-scan"></div>    
-		
-		<script src="js/include-product-detail.js"></script>
-		<script src="js/include-fav-list.js"></script>
-		<script src="js/include-bar-code-scan.js"></script>
-		<script src="js/include-product-list.js"></script>
+		<div data-role="page" id="productDetail" data-dialog="true"></div>
+		<div data-role="page" id="favList" data-dialog="true"></div>
+		<div data-role="page" id="barCodeScan"></div>
+
+		<script src="js/includeProductDetail.js"></script>
+		<script src="js/includeFavList.js"></script>
+		<script src="js/includeBarCodeScan.js"></script>
+		<script src="js/includeProductList.js"></script>
 	</body>
 </html>

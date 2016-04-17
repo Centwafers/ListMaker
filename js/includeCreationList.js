@@ -1,12 +1,12 @@
 document.getElementById("creation-btn").onclick = function blockForm(){
-    console.log("mmm");
-    var listName = document.getElementById("listNameCreation").value;
-    var password = document.getElementById('passwordCreation').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.
+  console.log("mmm");
+  var listName = document.getElementById("listNameCreation").value;
+  var password = document.getElementById('passwordCreation').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.
 	var password2 = document.getElementById('password2Creation').value;
 
 	var site = 'http://listmaker-stkl.esy.es/';
     var dossier = 'creation.php';
-	
+
     if (listName.length===0)
     {
         return alert("Veuillez entrer le nom de votre liste");
@@ -29,22 +29,22 @@ document.getElementById("creation-btn").onclick = function blockForm(){
 	}
     else
     {
-	
+
 	var get_success = 'success';
-	
+
         $.ajax({
-            url : site+dossier, 
+            url : site+dossier,
             type : 'POST',
             data : "listName="+listName+"&password="+password+"&password2="+password2,
             dataType : 'HTML', // text ou JSON, à voir
             success : function(resultat,statut)
-            {	
+            {
                 if(resultat == get_success)
 				{
 					alert("Votre liste a bien été enregistrée"); // Afficher un message temporaire pour ensuite rediriger
 					document.location.href="connexion.html";
                 }
-				else 
+				else
 				{
 					alert(resultat);
 				}

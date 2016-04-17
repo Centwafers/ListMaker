@@ -1,25 +1,25 @@
 <?php
 require('dbConnexion.php');
-require('test_input.php');
- 
+require('testInput.php');
+
 if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['password2']))
 {
 	if($_POST['password'] == $_POST['password2'])
 	{
-		$listName = $_POST['listName'];
+		$listName = testInput($_POST['listName']);
 		$password = md5($_POST['password']);
-		
+
 		$listName = test_input($listName);
-		
+
 		$sql = 'SELECT listName FROM LogList WHERE listName=:listName';
 		$response = $dbh->prepare($sql);
 		$response->bindParam(':listName', $listName, PDO::PARAM_STR,80);
 		$response->execute();
-		
+
 		if($response->rowCount() === 0)
 		{
 			$sql = 'INSERT INTO LogList(listName, password, hashSession) VALUES(:listName, :password, :hash)';
-		
+
 			$response = $dbh->prepare($sql);
 			$response->bindParam(':listName', $listName, PDO::PARAM_STR, 80);
 			$response->bindParam(':password', $password, PDO::PARAM_STR, 255);

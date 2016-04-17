@@ -1,6 +1,6 @@
 $(function(){
-	$("#bar-code-scan").load("bar-code-scan.html");
-	 $("#scan-btn").click(function(){
+	$("#barCodeScan").load("barCodeScan.html");
+	 $("#scanBtn").click(function(){
 		   alert("izi");
 			cordova.plugins.barcodeScanner.scan(
 		  function (result) {
@@ -17,6 +17,6 @@ $(function(){
 		  function (error) {
 		      alert("Scanning failed: " + error);
 		  }
-		);   
+		);
 	});
 });

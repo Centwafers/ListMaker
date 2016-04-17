@@ -28,23 +28,23 @@
 			</div>
 			<div data-role="main" class="ui-content" id="div-form">
 				<form method="post">
-					<input type="text" name="username" id="username" placeholder="Nom d'utilisateur">
-					<input type="text" name="listName" id="listName" placeholder="Nom de la liste">
-					<input type="password" name="password" id="password" placeholder="Mot de passe">
-          <a class="ui-btn" id="connexion-btn" type="submit"><span id="connexion-text">Connexion</span></a>
+					<input id="username" placeholder="Nom d'utilisateur" type="text">
+					<input id="listName" placeholder="Nom de la liste" type="text">
+					<input id="password" placeholder="Mot de passe" type="password">
+          <a id="connexion-btn" class="ui-btn" type="submit"><span id="connexion-text">Connexion</span></a>
 				</form>
-        <div id="creation-link">
-            <h4 id="text-no-list">Pas encore de liste?</h4>
-            <a href="#creation" id="creation-link-btn" class="ui-btn">Créer une liste</a>
+        <div id="creationLink">
+            <h4 id="textNoList">Pas encore de liste?</h4>
+            <a href="#creation" id="creationLinkBtn" class="ui-btn">Créer une liste</a>
         </div>
 			</div>
 		</div>
 
-		<div data-role="page" id="creation"></div>
+		<div id="creation" data-role="page"></div>
 
-    <script src="js/include-creation.js"></script>
+    <script src="js/includeCreation.js"></script>
 		<!-- <script src="js/md5.min.js"></script> -->
 		<!-- <script src="js/connexion.js"></script> -->
-		<script src="js/connexion-bis.js"></script>
+		<script src="js/connexionBis.js"></script>
 	</body>
 </html>

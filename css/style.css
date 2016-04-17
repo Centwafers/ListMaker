@@ -6,7 +6,7 @@ form{
     margin-top: 20%;
 }
 
-#creation-link{
+#creationLink{
     position: absolute;
     width: 75%;
     bottom: 5%;
@@ -14,12 +14,12 @@ form{
     transform: translate(-50%);
 }
 
-#text-no-list{
+#textNoList{
     text-shadow: 0 0 0;
     text-align: center;
 }
 
-#connexion-btn, #creation-link-btn, #creation-btn{
+#connexionBtn, #creationLinkBtn, #creationBtn{
     background-color: #5CBCF6;
     border-color: #5CBCF6;
     color: #ffffff;
@@ -33,7 +33,7 @@ form{
   font-size: 20px;
 }
 
-#left-icon{
+#leftIcon{
   background-color: rgba(0,0,0,0.0);
   border-color: rgba(0,0,0,0.0);
   box-shadow: 0 0 0;
