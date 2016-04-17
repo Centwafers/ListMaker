@@ -9,7 +9,7 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 		$listName = testInput($_POST['listName']);
 		$password = md5($_POST['password']);
 
-		$listName = test_input($listName);
+		$listName = testInput($listName);
 
 		$sql = 'SELECT listName FROM LogList WHERE listName=:listName';
 		$response = $dbh->prepare($sql);
