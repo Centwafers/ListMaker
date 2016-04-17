@@ -7,11 +7,10 @@ form{
 }
 
 #creationLink{
-    position: absolute;
+    position: static;
     width: 75%;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%);
+    margin: 0 auto;
+    margin-top: 20%;
 }
 
 #textNoList{
