@@ -18,7 +18,7 @@ form{
     text-align: center;
 }
 
-#connexionBtn, #creationLinkBtn, #creationBtn{
+#connectionBtn, #creationLinkBtn, #creationBtn{
     background-color: #5CBCF6;
     border-color: #5CBCF6;
     color: #ffffff;

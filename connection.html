@@ -22,16 +22,16 @@
 	</head>
 	<body>
 
-		<div data-role="page" id="connexion">
+		<div data-role="page" id="connection">
 			<div data-role="header">
 				<h3>ListMaker</h3>
 			</div>
-			<div data-role="main" class="ui-content" id="div-form">
+			<div id="divForm" class="ui-content" data-role="main">
 				<form method="post">
 					<input id="username" placeholder="Nom d'utilisateur" type="text">
 					<input id="listName" placeholder="Nom de la liste" type="text">
 					<input id="password" placeholder="Mot de passe" type="password">
-          <a id="connexion-btn" class="ui-btn" type="submit"><span id="connexion-text">Connexion</span></a>
+          <a id="connectionBtn" class="ui-btn" type="submit"><span id="connectionText">Connexion</span></a>
 				</form>
         <div id="creationLink">
             <h4 id="textNoList">Pas encore de liste?</h4>
@@ -42,9 +42,11 @@
 
 		<div id="creation" data-role="page"></div>
 
-    <script src="js/includeCreation.js"></script>
+		<script src="js/animationBtn.js"></script>
+		<script src="js/includeCreation.js"></script>
+		<script src="js/connectionBis.js"></script>
 		<!-- <script src="js/md5.min.js"></script> -->
 		<!-- <script src="js/connexion.js"></script> -->
-		<script src="js/connexionBis.js"></script>
+
 	</body>
 </html>
