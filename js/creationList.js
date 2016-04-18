@@ -34,7 +34,7 @@ document.getElementById("creationBtn").onclick = function blockForm(){
         success : function(resultat,statut){
           if(resultat == get_success){
 			      alert("Votre liste a bien été enregistrée"); // Afficher un message temporaire pour ensuite rediriger
-			      document.location.href="connexion.html";
+			      document.location.href="connection.html";
           }
 			    else{
 				    alert(resultat);
