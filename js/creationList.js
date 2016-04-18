@@ -8,42 +8,86 @@ document.getElementById("creationBtn").onclick = function blockForm(){
   var dossier = 'creationList.php';
 
   if (listName.length===0){
-      return alert("Veuillez entrer le nom de votre liste");
+    creationErrorAnimation("Champ vide");
+    // return alert("Veuillez entrer le nom de votre liste");
   }
   else if (listName.length<3){
-		return alert("Le nom de la liste doit comporter au moins 3 caractères");
+    creationErrorAnimation("Nom trop court");
+		// return alert("Le nom de la liste doit comporter au moins 3 caractères");
 	}
   else if (password.length===0){
-    return alert("Veuillez entrer votre mot de passe");
+    creationErrorAnimation("Champ vide");
+    // return alert("Veuillez entrer votre mot de passe");
   }
 	else if (password.length<3){
-		return alert("Votre mot de passe est beaucoup trop court"); // à modifier si MD5 côté client
+    creationErrorAnimation("Mot de passe trop court");
+		// return alert("Votre mot de passe est beaucoup trop court"); // à modifier si MD5 côté client
 	}
 	else if (!(password==password2)){
-		return alert("Les deux mots de passes ne correspondent pas");
+    creationErrorAnimation("Mots de passe différents");
+		// return alert("Les deux mots de passes ne correspondent pas");
 	}
   else{
 
 	  var get_success = 'success';
 
     $.ajax({
-        url : site+dossier,
-        type : 'POST',
-        data : "listName="+listName+"&password="+password+"&password2="+password2,
-        dataType : 'HTML', // text ou JSON, à voir
-        success : function(resultat,statut){
-          if(resultat == get_success){
-			      alert("Votre liste a bien été enregistrée"); // Afficher un message temporaire pour ensuite rediriger
-			      document.location.href="connection.html";
-          }
-			    else{
-				    alert(resultat);
-				  }
-        },
-        error : function(resultat, statut, erreur)
-        {
-            alert(erreur);
+      url : site+dossier,
+      type : 'POST',
+      data : "listName="+listName+"&password="+password+"&password2="+password2,
+      dataType : 'HTML', // text ou JSON, à voir
+      success : function(resultat,statut){
+        if(resultat == get_success){
+          creationSuccessAnimation();
+		      // alert("Votre liste a bien été enregistrée");
+		      document.location.href="connection.html";
         }
+		    else{
+          creationErrorAnimation("Cette liste existe déjà");
+			    //alert(resultat);
+			  }
+      },
+      error : function(resultat, statut, erreur){
+        creationErrorAnimation("Une erreur est survenue");
+        //alert(erreur);
+      }
     });
   }
+}
+
+function creationErrorAnimation(msg){
+  $("#errorCreationMsg").text(msg);
+  $("#errorCreationMsg").css("visibility", "visible");
+
+  var btn = $("#creationBtn");
+  var icon = $("#creationBtnText");
+  var blue = "#5CBCF6";
+  var red = "#FF3333";
+
+  btn.animate({backgroundColor: red, borderColor: red}, 250);
+
+  for (i = 0; i < 3; i++) {
+    btn.animate({left: '-5%'}, 50);
+    btn.animate({left: '5%'}, 50);
+  }
+
+  btn.animate({left: '0%'}, 25);
+  btn.animate({backgroundColor: blue, borderColor: blue}, 250);
+
+  window.setTimeout(hideCreationErrorMsg,2500);
+}
+
+function creationSuccessAnimation(){
+  var btn = $("#creationBtn");
+  var icon = $("#creationBtnText");
+  var green = "#47d147";
+
+  icon.text("");
+  icon.addClass("fa fa-check");
+
+  btn.animate({backgroundColor: green, borderColor: green}, 250);
+}
+
+function hideCreationErrorMsg(){
+  $("#errorCreationMsg").css("visibility", "hidden");
 }

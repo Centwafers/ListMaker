@@ -1,17 +1,19 @@
 <div data-role="header">
 
-	<a href="#connexion" id="leftIcon"><i id="fa-icon" class="fa fa-arrow-left"></i></a>
+	<a href="#connection" id="leftIcon"><i id="fa-icon" class="fa fa-arrow-left"></i></a>
 
 	<h3>ListMaker</h3>
 
 </div>
 <div data-role="main" class="ui-content">
 	<form method="post">
+		<span id="errorCreationMsg">Message d'erreur</span>
 		<input id="listNameCreation" placeholder="Nom de la liste" type="text">
 		<input id="passwordCreation" placeholder="Mot de passe" type="password">
 		<input id="password2Creation" placeholder="Repetez le mot de passe" type="password">
 
-		<a id="creationBtn" class="ui-btn">Créer</a>
+		<a id="creationBtn" class="ui-btn"><span id="creationBtnText">Créer</span></a>
 	</form>
 </div>
+
 <script src="js/creationList.js"></script>

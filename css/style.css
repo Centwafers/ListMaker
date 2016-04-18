@@ -1,27 +1,33 @@
-
 /*CONNEXION & INSCRIPTION*/
+#errorCreationMsg{
+  visibility: hidden;
+  display: block;
+  margin-bottom: 10%;
+}
+
 form{
-    width: 75%;
-    margin: auto;
-    margin-top: 20%;
+  text-align: center;
+  width: 85%;
+  margin: auto;
+  margin-top: 20%;
 }
 
 #creationLink{
-    position: static;
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 20%;
+  position: static;
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 20%;
 }
 
 #textNoList{
-    text-shadow: 0 0 0;
-    text-align: center;
+  text-shadow: 0 0 0;
+  text-align: center;
 }
 
 #connectionBtn, #creationLinkBtn, #creationBtn{
-    background-color: #5CBCF6;
-    border-color: #5CBCF6;
-    color: #ffffff;
+  background-color: #5CBCF6;
+  border-color: #5CBCF6;
+  color: #ffffff;
 }
 
 #fa-icon{
