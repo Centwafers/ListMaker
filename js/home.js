@@ -11,12 +11,15 @@ $(document).ready(function(){
 		data:'hashSession='+hashSession,
 		type: "GET",
 		success:function(data){
-			console.log(data);
-			
-			/*	$(results).each(function(key, value) {
-					console.log(value.idProduct +' '+value.nameProduct);
-				})*/
-			
+			var productL;
+			 for (var i = 0; i < data.length; i++) {
+					productL = $('<a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
+					productL.append("<h2>"+data[i].nameProduct+"</h2>");
+					productL.append("<p>"+data[i].addedBy+"</p>");
+					productL.append('<span class="ui-li-count">2</span></a><a href="#" data-icon="star">Ajouter aux favoris</a></li>');
+					$('#listContent').append(tr);
+		    }
+				$('#listContent').listview('refresh');
 		}
 	});
 	
