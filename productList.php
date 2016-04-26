@@ -39,7 +39,7 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']);
 			array_push($json['product'],$row);
 			}
-			echo json_encode($json);
+			
 			//echo json_encode($userListDetails->fetchAll());
 			//$userListDetails=$userListDetails->fetchAll();
 			
@@ -80,6 +80,7 @@ if(isset($_GET['hashSession']))
 			echo '}';
 			echo $json;*/
 		}
+		echo json_encode($json);
 	}
 }
 ?>
