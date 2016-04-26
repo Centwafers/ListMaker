@@ -17,7 +17,7 @@ if(isset($_GET['hashSession']))
 		$userList->bindValue(':idLoglist', $user['id'], PDO::PARAM_INT);
 		$userList->execute();
 		$json ='';
-		//$json = '{';
+		$json = '{';
 	
 		foreach($userList as $oneProduct)
 		{
@@ -51,7 +51,7 @@ if(isset($_GET['hashSession']))
 			}
 			$json .= substr($json, 0, -1);
 		}
-		//$json .= '}';
+		$json .= '}';
 		echo $json;
 	}
 }
