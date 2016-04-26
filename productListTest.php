@@ -33,8 +33,6 @@ if(isset($_GET['hashSession']))
 			
 			foreach($userListDetails as $oneDetails)
 			{
-
-				echo $oneDetails['idProduct'];
 				$json .= '"'.$oneDetails['idProduct'].'"'.':';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
@@ -45,7 +43,7 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']
 				);
 				$json .= json_encode($array);
-				$json .= ', ';
+				$json .= ',';
 				
 			}
 			$json = substr($json, 0, -1);
