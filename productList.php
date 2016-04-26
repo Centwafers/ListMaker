@@ -13,14 +13,16 @@ if(isset($_GET['hashSession']))
 	echo $response->fetch();
 	echo $response->rowCount();
 	var_dump($response);
-	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
-	$response2 = $dbh->prepare($sql);
-	$response2->bindValue(':idLoglist', $response['id'], PDO::PARAM_INT);
-	$response2->execute();
 	
-	foreach($response as $elem)
-	{
-		echo json_encode($elem);
-	}
+	
+//	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
+//	$response2 = $dbh->prepare($sql);
+//	$response2->bindValue(':idLoglist', $response['id'], PDO::PARAM_INT);
+//	$response2->execute();
+	
+//	foreach($response2 as $elem)
+//	{
+//		echo json_encode($elem);
+//	}
 }
 ?>
