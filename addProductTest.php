@@ -20,10 +20,10 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
     echo $response1['id'].' '.$_GET['idProduct'].' '.$_GET['quantity'].' '.$_GET['addedBy'];
     $sql = "INSERT INTO ConsumerList VALUES(':idLogList', ':idProduct', ':quantity', ':addedBy')";
     $response = $dbh->prepare($sql);
-    $response->bindValue(':idLogList', $response1['id'], PDO::PARAM_INT);
-    $response->bindValue(':idProduct', $_GET['idProduct'], PDO::PARAM_INT);
-    $response->bindValue(':quantity', $_GET['quantity'], PDO::PARAM_INT);
-    $response->bindValue(':addedBy', $_GET['addedBy'], PDO::PARAM_INT);
+    $response->bindParam(':idLogList', $response1['id']);
+    $response->bindParam(':idProduct', $_GET['idProduct']);
+    $response->bindParam(':quantity', $_GET['quantity']);
+    $response->bindParam(':addedBy', $_GET['addedBy']);
     $response->execute();
   }
   else
