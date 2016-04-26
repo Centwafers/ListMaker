@@ -13,8 +13,6 @@ $(document).ready(function(){
 		type: "GET",
 		success:function(data){
 			var obj = $.parseJSON(data);
-			console.log(obj)
-			var productL;
 			$.each(obj, function(i, item) {
 				$("#listContent").append("<li><a href=\"#product-detail\" data-transition=\"pop\"><img src=\"./img/productPicture/bread.png\"><h2>"+item.nameProduct+"</h2><p>Ajouté par "+item.addedBy+"</p><span class=\"ui-li-count\">"+item.quantity+"</span></a><a href=\"#\" data-icon=\"star\">Ajouter aux favoris</a></li>").listview('refresh');
 				});
