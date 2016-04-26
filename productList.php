@@ -33,14 +33,14 @@ if(isset($_GET['hashSession']))
 			header("content-type:application/json");
 			echo json_encode($userListDetails);
 			
-		/*	$json = '{';
-			//$result = array();
+		//	$json = '{';
+			$result = array();
 			foreach($userListDetails as $oneDetails)
 			{
-				if(strlen($json)>1)$json = substr($json, 0, -1);
-				rtrim($json, ",");
-				rtrim($json, "}");
-				$json .= '"'.$oneDetails['idProduct'].'"'.':';
+				//if(strlen($json)>1)$json = substr($json, 0, -1);
+				//rtrim($json, ",");
+			//	rtrim($json, "}");
+			//	$json .= '"'.$oneDetails['idProduct'].'"'.':';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
@@ -49,19 +49,19 @@ if(isset($_GET['hashSession']))
 					'unity'		=>$oneDetails['unity'],
 					'quantity'	=>$oneDetails['quantity']
 				);
-				 //array_push($result,$array);
-				$json .= json_encode($array, JSON_PRETTY_PRINT);
-				rtrim($json, ",");
-				rtrim($json, "}");
-				$json .= ', ';
+				 array_push($result,$array);
+			//	$json .= json_encode($array, JSON_PRETTY_PRINT);
+			//	rtrim($json, ",");
+			//	rtrim($json, "}");
+			//	$json .= ', ';
 				
 			}
-		//	echo json_encode($result);
-		rtrim($json, "}");
-			$json = substr($json, 0, -1);
-			rtrim($json, ",");
-			$json .= '}';
-			echo $json;*/
+			echo json_encode($result);
+	//	rtrim($json, "}");
+		//	$json = substr($json, 0, -1);
+		//	rtrim($json, ",");
+		//	$json .= '}';
+//			echo $json;*/
 		}
 	}
 }
