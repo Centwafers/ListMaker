@@ -45,7 +45,7 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']
 				);
 				 //array_push($result,$array);
-				echo json_encode($array, JSON_PRETTY_PRINT);
+				$json .= json_encode($array, JSON_PRETTY_PRINT);
 				$json .= ', ';
 			}
 		//	echo json_encode($result);
