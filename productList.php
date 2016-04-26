@@ -30,20 +30,29 @@ if(isset($_GET['hashSession']))
 			$userListDetails->execute();
 			
 			//$userListDetails=$userListDetails->fetchAll();
-			header("content-type:application/json");
-		
-echo json_encode($userListDetails->fetchAll(PDO::FETCH_ASSOC));
+			//header("content-type:application/json");
+			//echo json_encode($userListDetails->fetchAll(PDO::FETCH_NUM));
+
 			//echo json_encode($userListDetails);
 			
-		//	$json = '{';
-		/*	$result = array();
+			echo '{';
+			$result = array();
 			foreach($userListDetails as $oneDetails)
 			{
+				
+				echo '"'.$oneDetails['idProduct'].'"'.':{'.
+					'"idProduct":"'.$oneDetails['idProduct'].'",'.
+					'"nameProduct":"'.$oneDetails['nameProduct'].'",'.
+					'"type":"'.$oneDetails['type'].'",'.
+					'"price":"'.$oneDetails['price'].'",'.
+					'"unity":"'.$oneDetails['unity'].'",'.
+					'"quantity":"'.$oneDetails['quantity'].'"'.
+					'},';
 				//if(strlen($json)>1)$json = substr($json, 0, -1);
 				//rtrim($json, ",");
 			//	rtrim($json, "}");
 			//	$json .= '"'.$oneDetails['idProduct'].'"'.':';
-				$array = array(
+			/*	$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
 					'type'		=>$oneDetails['type'],
@@ -51,19 +60,19 @@ echo json_encode($userListDetails->fetchAll(PDO::FETCH_ASSOC));
 					'unity'		=>$oneDetails['unity'],
 					'quantity'	=>$oneDetails['quantity']
 				);
-				 array_push($result,$array);
+				 array_push($result,$array);*/
 			//	$json .= json_encode($array, JSON_PRETTY_PRINT);
 			//	rtrim($json, ",");
 			//	rtrim($json, "}");
 			//	$json .= ', ';
 				
 			}
-			echo json_encode($result);
+			//echo json_encode($result);
 	//	rtrim($json, "}");
 		//	$json = substr($json, 0, -1);
 		//	rtrim($json, ",");
-		//	$json .= '}';
-//			echo $json;*/
+			echo '}';
+//			echo $json;
 		}
 	}
 }
