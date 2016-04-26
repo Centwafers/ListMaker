@@ -8,6 +8,7 @@ $(document).ready(function(){
 	jQuery.ajax(
 	{
 		url: site+dossier,
+		dataType: "json",
 		data:'hashSession='+hashSession,
 		type: "GET",
 		success:function(data){
