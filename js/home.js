@@ -9,13 +9,13 @@ $(document).ready(function(){
 	{
 		url: site+dossier,
 		data:'hashSession='+hashSession,
-		
+		datatype : 'json',
 		type: "GET",
 		success:function(data){
-			console.log(data);
 			var obj = $.parseJSON(data);
+			console.log(obj)
 			var productL;
-			 for (var i = 0; i < data.length; i++) {
+			 for (var i = 0; i < obj.length; i++) {
 					productL = $('<li><a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
 					productL.append("<h2>"+obj[i].nameProduct+"</h2>");
 					productL.append("<p>"+obj[i].addedBy+"</p>");
