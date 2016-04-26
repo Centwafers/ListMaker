@@ -61,7 +61,7 @@ if(isset($_GET['hashSession']))
 				 array_push($result,$array);*/
 			//	$json .= ', ';
 				
-			}
+		//	}
 			
 	
 		//	$json .= substr($json, 0, -1);
