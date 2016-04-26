@@ -5,7 +5,7 @@ require('dbConnexion.php');
 //if(isset($_GET['idLoglist']))
 if(isset($_GET['hashSession']))
 {
-	$sql = 'SELECT hashSession FROM LogList WHERE hashSession = :hashSession'
+	$sql = 'SELECT hashSession FROM LogList WHERE hashSession = :hashSession';
 	$response = $dbh->prepare($sql);
 	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR)
 	$response->execute();
