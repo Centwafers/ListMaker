@@ -42,7 +42,8 @@ if(isset($_GET['hashSession']))
 					'price'		=>$oneDetails['price'],
 					'unity'		=>$oneDetails['unity'],
 					'quantity'	=>$oneDetails['quantity'],
-					'addedBy'	=>$oneDetails['addedBy']
+					'addedBy'	=>$oneDetails['addedBy'],
+					'image'		=>$oneDetails['image']
 				);
 				$json .= json_encode($array);
 				$json .= ',';
