@@ -14,7 +14,7 @@ $(document).ready(function(){
 		success:function(data){
 			var obj = $.parseJSON(data);
 			$.each(obj, function(i, item) {
-				$("#listContent").append("<li><a href=\"#product-detail\" data-transition=\"pop\"><img src=\"./img/productPicture/"item.image"\"><h2>"+item.nameProduct+"</h2><p>Ajouté par "+item.addedBy+"</p><span class=\"ui-li-count\">"+item.quantity+"</span></a><a href=\"#\" data-icon=\"star\">Ajouter aux favoris</a></li>").listview('refresh');
+				$("#listContent").append("<li><a href=\"#product-detail\" data-transition=\"pop\"><img src=\"./img/productPicture/"+item.image+"\"><h2>"+item.nameProduct+"</h2><p>Ajouté par "+item.addedBy+"</p><span class=\"ui-li-count\">"+item.quantity+"</span></a><a href=\"#\" data-icon=\"star\">Ajouter aux favoris</a></li>").listview('refresh');
 				});
 		}
 	});
