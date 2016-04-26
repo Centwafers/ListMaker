@@ -16,14 +16,8 @@ $(document).ready(function(){
 			console.log(obj)
 			var productL;
 			$.each(obj, function(i, item) {
-				
-					productL = $('<li><a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
-					productL.append("<h2>"+item.nameProduct+"</h2>");
-					productL.append("<p>"+item.addedBy+"</p>");
-					productL.append('<span class="ui-li-count">'+item.quantity+'</span></a><a href="#" data-icon="star">Ajouter aux favoris</a></li>');
-					$('#listContent').append(productL);
+				$("#listContent").append("<li><a href=\"#product-detail\" data-transition=\"pop\"><img src=\"./img/productPicture/bread.png\"><h2>"+item.nameProduct+"</h2><p>Ajouté par "+item.addedBy+"</p><span class=\"ui-li-count\">"+item.quantity+"</span></a><a href=\"#\" data-icon=\"star\">Ajouter aux favoris</a></li>").listview('refresh');
 				});
-				$('#listContent').listview('refresh');
 		}
 	});
 	
