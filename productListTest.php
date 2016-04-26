@@ -23,7 +23,7 @@ if(isset($_GET['hashSession']))
 		{
 			
 			$sql = "SELECT *,
-				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS `quantity`
+				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS `quantity`,
 				(SELECT `addedBy` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS `addedBy`
 				FROM `MarketList` 
 				WHERE `idProduct`=:idProduct";
