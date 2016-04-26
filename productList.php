@@ -21,7 +21,7 @@ if(isset($_GET['hashSession']))
 		{
 			
 			$sql = "SELECT *,
-				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) 
+				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS `quantity`)
 				FROM `MarketList` 
 				WHERE `idProduct`=:idProduct";
 			$userListDetails = $dbh->prepare($sql);
@@ -35,12 +35,12 @@ if(isset($_GET['hashSession']))
 
 			//echo json_encode($userListDetails);
 			
-			echo '{';
+			$json = '{';
 			$result = array();
 			foreach($userListDetails as $oneDetails)
 			{
 				
-				echo '"'.$oneDetails['idProduct'].'"'.':{'.
+				$json .= '"'.$oneDetails['idProduct'].'"'.':{'.
 					'"idProduct":"'.$oneDetails['idProduct'].'",'.
 					'"nameProduct":"'.$oneDetails['nameProduct'].'",'.
 					'"type":"'.$oneDetails['type'].'",'.
@@ -48,11 +48,9 @@ if(isset($_GET['hashSession']))
 					'"unity":"'.$oneDetails['unity'].'",'.
 					'"quantity":"'.$oneDetails['quantity'].'"'.
 					'},';
-				//if(strlen($json)>1)$json = substr($json, 0, -1);
-				//rtrim($json, ",");
-			//	rtrim($json, "}");
-			//	$json .= '"'.$oneDetails['idProduct'].'"'.':';
-			/*	$array = array(
+					
+			/*	$json .= '"'.$oneDetails['idProduct'].'"'.':';
+				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
 					'type'		=>$oneDetails['type'],
@@ -61,16 +59,12 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']
 				);
 				 array_push($result,$array);*/
-			//	$json .= json_encode($array, JSON_PRETTY_PRINT);
-			//	rtrim($json, ",");
-			//	rtrim($json, "}");
 			//	$json .= ', ';
 				
 			}
-			//echo json_encode($result);
-	//	rtrim($json, "}");
-		//	$json = substr($json, 0, -1);
-		//	rtrim($json, ",");
+			
+	
+			$json .= substr($json, 0, -1);
 			echo '}';
 //			echo $json;
 		}
