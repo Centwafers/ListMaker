@@ -15,5 +15,10 @@ if(isset($_GET['idLogList']))
 		echo json_encode($elem);
 	}
 }
+else
+{
+	echo 'testElse';
+}
+echo 'test';
 
 ?>
