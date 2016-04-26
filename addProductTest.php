@@ -16,7 +16,7 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
   
   if($response1->rowCount()===1 && $response->rowCount()===1)
   {
-    $response1 = $reponse1->fetch();
+    $response1 = $response1->fetch();
     
     $sql = "INSERT INTO ConsumerList VALUES(':idLogList', ':idProduct', ':quantity', ':addedBy')";
     $response = $dbh->prepare($sql);
