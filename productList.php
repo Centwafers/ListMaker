@@ -21,8 +21,8 @@ if(isset($_GET['hashSession']))
 		{
 			
 			$sql = "SELECT * FROM MarketList WHERE idProduct = :idProduct 
-				INNER JOIN ConsumerList 
-				WHERE MarketList.idProduct=ConsumerList.idProduct";
+				INNER JOIN ConsumerList, LogList 
+				WHERE MarketList.idProduct=ConsumerList.idProduct AND MarketList.idLogList=LogList.id";
 			$userListDetails = $dbh->prepare($sql);
 			$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
 			$userListDetails->execute();
