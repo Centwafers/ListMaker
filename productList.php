@@ -31,7 +31,6 @@ if(isset($_GET['hashSession']))
 			foreach($userListDetails as $oneDetails)
 			{
 				echo json_encode($oneDetails);
-				echo json_encode($oneProduct['quantity']);
 			}
 		}
 	}
