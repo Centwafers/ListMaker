@@ -18,7 +18,7 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
   {
     $response1 = $reponse1->fetch();
     
-    $sql = "INSERT INTO ConsumerList VALUES(':idLogList', ':idProduct', ':quantity', ':addedBy')"
+    $sql = "INSERT INTO ConsumerList VALUES(':idLogList', ':idProduct', ':quantity', ':addedBy')";
     $response = $dbh->prepare($sql);
     $response->bindValue(':idLogList', $response1['id'], PDO::PARAM_INT);
     $response->bindValue(':idProduct', $_GET['idProduct'], PDO::PARAM_INT);
