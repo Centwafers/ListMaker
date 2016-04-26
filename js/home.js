@@ -15,13 +15,14 @@ $(document).ready(function(){
 			var obj = $.parseJSON(data);
 			console.log(obj)
 			var productL;
-			 for (var i = 0; i < obj.length; i++) {
+			$.each(data, function(i, item) {
+				alert(item.PageName);
 					productL = $('<li><a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
-					productL.append("<h2>"+obj[i].nameProduct+"</h2>");
-					productL.append("<p>"+obj[i].addedBy+"</p>");
+					productL.append("<h2>"+item.nameProduct+"</h2>");
+					productL.append("<p>"+item.addedBy+"</p>");
 					productL.append('<span class="ui-li-count">2</span></a><a href="#" data-icon="star">Ajouter aux favoris</a></li>');
 					$('#listContent').append(productL);
-		    }
+				});
 				$('#listContent').listview('refresh');
 		}
 	});
