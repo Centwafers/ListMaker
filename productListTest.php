@@ -45,7 +45,7 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']
 				);
 				$json .= json_encode($array);
-				$json .= ', ';
+				$json .= ', tralala';
 				
 			}
 			$json .= substr($json, 0, -1);
