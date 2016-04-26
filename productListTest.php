@@ -45,10 +45,10 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']
 				);
 				$json .= json_encode($array);
-				$json .= ', tralala';
+				$json .= ', ';
 				
 			}
-			//$json .= substr($json, 0, -1);
+			$json = substr($json, 0, -1);
 		}
 		$json .= '}';
 		echo $json;
