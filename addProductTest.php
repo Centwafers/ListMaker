@@ -24,7 +24,7 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
     $response->bindParam(':idProduct', $_GET['idProduct']);
     $response->bindParam(':quantity', $_GET['quantity']);
     $response->bindParam(':addedBy', $_GET['addedBy']);
-    $response->execute();
+    echo $response->execute();
   }
   else
   {
