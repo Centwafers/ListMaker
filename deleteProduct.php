@@ -15,5 +15,6 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct'])) {
     $response1->bindValue(':idLogList', $response1['id'], PDO::PARAM_INT);
     $response->execute();
   }
+}
   
 ?>
