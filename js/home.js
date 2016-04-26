@@ -12,9 +12,9 @@ $(document).ready(function(){
 		type: "GET",
 		success:function(data){
 			var results = jQuery.parseJSON(data);
-				$(results).each(function(key, value) {
-					console.Log(value.idProduct +' '+value.nameProduct);
-				})
+			/*	$(results).each(function(key, value) {
+					console.log(value.idProduct +' '+value.nameProduct);
+				})*/
 			
 		}
 	});
