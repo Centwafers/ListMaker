@@ -9,12 +9,10 @@ if(isset($_GET['hashSession']))
 	$response = $dbh->prepare($sql);
 	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
 	$response->execute();
-	echo $response->rowCount();
+	
 	echo $response->fetch();
 	echo $response->rowCount();
-	echo 'blabla';
-	
-	
+	var_dump($response);
 	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
 	$response2 = $dbh->prepare($sql);
 	$response2->bindValue(':idLoglist', $response['idLogList'], PDO::PARAM_INT);
