@@ -18,9 +18,10 @@ if(isset($_GET['hashSession']))
 		$userList->execute();
 		$json ='';
 		//$json = '{';
-		
+	
 		foreach($userList as $oneProduct)
 		{
+			echo '1';
 			
 			$sql = "SELECT *,
 				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS `quantity`
@@ -34,7 +35,7 @@ if(isset($_GET['hashSession']))
 			foreach($userListDetails as $oneDetails)
 			{
 
-					
+				echo '2';	
 				$json .= '"'.$oneDetails['idProduct'].'"'.':';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
