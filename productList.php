@@ -2,34 +2,29 @@
 
 require('dbConnexion.php');
 
-//if(isset($_GET['idLoglist']))
 if(isset($_GET['hashSession']))
 {
 	$sql = 'SELECT id, hashSession FROM LogList WHERE hashSession = :hashSession';
-	$response = $dbh->prepare($sql);
-	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
-	$response->execute();
-//	var_dump($response->rowCount());
-	$response = $response->fetch();
-	
-//	var_dump($response);
-	
+	$user = $dbh->prepare($sql);
+	$user->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
+	$user->execute();
+	$user = $user->fetch();
 	
 	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
-	$response2 = $dbh->prepare($sql);
-	$response2->bindValue(':idLoglist', $response['id'], PDO::PARAM_INT);
-	$response2->execute();
+	$userList = $dbh->prepare($sql);
+	$userList->bindValue(':idLoglist', $user['id'], PDO::PARAM_INT);
+	$userList->execute();
 	
-	foreach($response2 as $elem)
+	foreach($userList as $oneProduct)
 	{
 		
 		$sql = "SELECT * FROM MarketList WHERE idProduct = :idProduct";
-		$response3 = $dbh->prepare($sql);
-		$response3->bindValue(':idProduct', $elem['idProduct'], PDO::PARAM_INT);
-		$response3->execute();
-		foreach($response3 as $elem2)
+		$userListDetails = $dbh->prepare($sql);
+		$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
+		$userListDetails->execute();
+		foreach($userListDetails as $oneProduct)
 		{
-			echo json_encode($elem2);
+			echo json_encode($oneDetails);
 		}
 	}
 }
