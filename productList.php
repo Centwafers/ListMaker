@@ -5,20 +5,15 @@ require('dbConnexion.php');
 if(isset($_GET['idLoglist']))
 //if(isset($_GET['hashDeSession']))
 {
-	$sql = 'SELECT idProduct, quantity FROM ProductList WHERE idLoglist = :idLoglist';
+	
+	$sql = 'SELECT idProduct, quantity FROM ConsumerList WHERE idLoglist = :idLoglist';
 	$response = $dbh->prepare($sql);
 	$response->bindValue(':idLoglist', $_GET['idLoglist'], PDO::PARAM_INT);
 	$response->execute();
-	echo $response;
-	foreach($response as $elem)
+	
+	foreach($response->fetch as $elem)
 	{
 		echo json_encode($elem);
 	}
 }
-else
-{
-	echo 'testElse';
-}
-echo 'test';
-
 ?>
