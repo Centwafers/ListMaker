@@ -9,7 +9,7 @@ $(document).ready(function(){
 	{
 		url: site+dossier,
 		data:'hashSession='+hashSession,
-		dataType: 'json',
+		
 		type: "GET",
 		success:function(data){
 			console.log(data);
