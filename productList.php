@@ -1,7 +1,7 @@
 <?php
 
 require('dbConnexion.php');
-
+header("content-type:application/json");
 if(isset($_GET['hashSession']))
 {
 	$sql = 'SELECT id, hashSession FROM LogList WHERE hashSession = :hashSession';
@@ -21,16 +21,16 @@ if(isset($_GET['hashSession']))
 		{
 			
 			$sql = "SELECT *,
-				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS `quantity`)
+				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) AS quantity
 				FROM `MarketList` 
 				WHERE `idProduct`=:idProduct";
 			$userListDetails = $dbh->prepare($sql);
 			$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
 			$userListDetails->bindValue(':idLogList', $user['id'], PDO::PARAM_INT);
 			$userListDetails->execute();
-			
-			//$userListDetails=$userListDetails->fetchAll();
-			//header("content-type:application/json");
+			echo json_encode($userListDetails->fetchAll());
+		/*	//$userListDetails=$userListDetails->fetchAll();
+			//
 			//echo json_encode($userListDetails->fetchAll(PDO::FETCH_NUM));
 
 			//echo json_encode($userListDetails);
@@ -64,9 +64,9 @@ if(isset($_GET['hashSession']))
 			}
 			
 	
-			$json .= substr($json, 0, -1);
-			echo '}';
-//			echo $json;
+		//	$json .= substr($json, 0, -1);
+		//	echo '}';
+//			echo $json;*/
 		}
 	}
 }
