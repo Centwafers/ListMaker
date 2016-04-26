@@ -10,7 +10,7 @@ if(isset($_GET['hashSession']))
 	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
 	$response->execute();
 	echo rowCount($response);
-	$response->fetch();
+	
 	
 	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE :idLogList = $response['idLogList']";
 	$response2 = $dbh->prepare($sql);
