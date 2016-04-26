@@ -1,7 +1,7 @@
 <?php
 
 require('dbConnexion.php');
-
+header("Access-Control-Allow-Origin: *");
 if(isset($_GET['hashSession']))
 {
 	$sql = 'SELECT id, hashSession FROM LogList WHERE hashSession = :hashSession';
