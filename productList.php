@@ -46,6 +46,7 @@ if(isset($_GET['hashSession']))
 				);
 				 //array_push($result,$array);
 				$json .= json_encode($array, JSON_PRETTY_PRINT);
+				$json = substr($json, 0, -1);
 				$json .= ', ';
 			}
 		//	echo json_encode($result);
