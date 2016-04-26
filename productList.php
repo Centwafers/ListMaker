@@ -22,7 +22,7 @@ if(isset($_GET['hashSession']))
 		$userListDetails = $dbh->prepare($sql);
 		$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
 		$userListDetails->execute();
-		foreach($userListDetails as $oneProduct)
+		foreach($userListDetails as $oneDetails)
 		{
 			echo json_encode($oneDetails);
 		}
