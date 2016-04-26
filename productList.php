@@ -10,8 +10,8 @@ if(isset($_GET['hashSession']))
 	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
 	$response->execute();
 	
-	echo $response->fetch();
-	echo $response->rowCount();
+	$response->fetch();
+	var_dump($response->rowCount());
 	var_dump($response);
 	
 	
