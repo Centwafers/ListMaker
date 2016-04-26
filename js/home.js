@@ -17,7 +17,7 @@ $(document).ready(function(){
 					productL.append("<h2>"+data[i].nameProduct+"</h2>");
 					productL.append("<p>"+data[i].addedBy+"</p>");
 					productL.append('<span class="ui-li-count">2</span></a><a href="#" data-icon="star">Ajouter aux favoris</a></li>');
-					$('#listContent').append(tr);
+					$('#listContent').append(productL);
 		    }
 				$('#listContent').listview('refresh');
 		}
