@@ -29,9 +29,9 @@ if(isset($_GET['hashSession']))
 			$userListDetails->bindValue(':idLogList', $user['id'], PDO::PARAM_INT);
 			$userListDetails->execute();
 			
-			$userListDetails=$userListDetails->fetchAll();
+			//$userListDetails=$userListDetails->fetchAll();
 			header("content-type:application/json");
-			echo json_encode($userListDetails);
+			//echo json_encode($userListDetails);
 			
 		//	$json = '{';
 			$result = array();
