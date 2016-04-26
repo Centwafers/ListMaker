@@ -33,8 +33,8 @@ if(isset($_GET['hashSession']))
 			foreach($userListDetails as $oneDetails)
 			{
 				$array = array(
-					'idProduct'=>'$oneDetails['idProduct']',
-					'quantity'=>'$oneDetails['quantity']'
+					'idProduct'=>"$oneDetails['idProduct']",
+					'quantity'=>"$oneDetails['quantity']"
 				);
 				echo json_encode($array);
 			}
