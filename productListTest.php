@@ -41,7 +41,7 @@ if(isset($_GET['hashSession']))
 					'type'		=>$oneDetails['type'],
 					'price'		=>$oneDetails['price'],
 					'unity'		=>$oneDetails['unity'],
-					'quantity'	=>$oneDetails['quantity']
+					'quantity'	=>$oneDetails['quantity'],
 					'addedBy'	=>$oneDetails['addedBy']
 				);
 				$json .= json_encode($array);
