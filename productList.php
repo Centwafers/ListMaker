@@ -3,6 +3,7 @@
 require('dbConnexion.php');
 
 if(isset($_GET['idLogList']))
+//if(isset($_GET['hashDeSession']))
 {
 	$sql = 'SELECT idProduct, quantity FROM ProductList WHERE idLogList = :idLogList';
 	$response = $dbh->prepare($sql);
