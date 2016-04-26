@@ -1,6 +1,7 @@
 <?php
   require('dbConnexion.php');
   require('testInput.php');
+  header("Access-Control-Allow-Origin: *");
   $msg = "fail";
 
   if(isset($_POST['listName']) && isset($_POST['password']))
