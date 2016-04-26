@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var site = 'http://listmaker-stkl.esy.es/';
-    var dossier = 'productList.php';
+    var dossier = 'productListTest.php';
 	var storage = window.localStorage;
 	var nom = storage.getItem("nom");
 	//hashSession = storage.getItem("session");
