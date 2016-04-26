@@ -51,6 +51,7 @@ if(isset($_GET['hashSession']))
 			$json .= substr($json, 0, -1);
 		}
 		$json .= '}';
+		echo $json;
 	}
 }
 ?>
