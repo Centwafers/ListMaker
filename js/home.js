@@ -20,7 +20,7 @@ $(document).ready(function(){
 					productL = $('<li><a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
 					productL.append("<h2>"+item.nameProduct+"</h2>");
 					productL.append("<p>"+item.addedBy+"</p>");
-					productL.append('<span class="ui-li-count">2</span></a><a href="#" data-icon="star">Ajouter aux favoris</a></li>');
+					productL.append('<span class="ui-li-count">'+item.quantity+'</span></a><a href="#" data-icon="star">Ajouter aux favoris</a></li>');
 					$('#listContent').append(productL);
 				});
 				$('#listContent').listview('refresh');
