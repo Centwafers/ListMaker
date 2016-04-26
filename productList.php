@@ -31,11 +31,11 @@ if(isset($_GET['hashSession']))
 			
 			//$userListDetails=$userListDetails->fetchAll();
 			//echo json_encode($userListDetails);
-			$json = '{';
+		//	$json = '{';
 			//$result = array();
 			foreach($userListDetails as $oneDetails)
 			{
-				$json .= '"'.$oneDetails['idProduct'].'"'.':';
+				//$json .= '"'.$oneDetails['idProduct'].'"'.':';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
@@ -45,14 +45,14 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity']
 				);
 				 //array_push($result,$array);
-				$json .= json_encode($array, JSON_PRETTY_PRINT);
-				$json .= ', ';
+				echo json_encode($array, JSON_PRETTY_PRINT);
+				//$json .= ', ';
 			}
 		//	echo json_encode($result);
 
-			$json = substr($json, 0, -1);
+			/*$json = substr($json, 0, -1);
 			$json .= '}';
-			echo $json;
+			echo $json;*/
 		}
 	}
 }
