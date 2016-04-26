@@ -13,7 +13,7 @@ $(document).ready(function(){
 		type: "GET",
 		success:function(data){
 			console.log(data);
-			var results = jQuery.parseJSON(data);
+			
 			/*	$(results).each(function(key, value) {
 					console.log(value.idProduct +' '+value.nameProduct);
 				})*/
