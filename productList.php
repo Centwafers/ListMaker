@@ -20,11 +20,13 @@ if(isset($_GET['hashSession']))
 		foreach($userList as $oneProduct)
 		{
 			
-			$sql = "SELECT * FROM MarketList WHERE idProduct = :idProduct 
-				INNER JOIN ConsumerList, LogList 
-				WHERE MarketList.idProduct=ConsumerList.idProduct AND MarketList.idLogList=LogList.id";
+			$sql = "SELECT *,
+				(SELECT `quantity` FROM `ConsumerList` WHERE `idLogList`=:idLogList AND `idProduct`=:idProduct) 
+				FROM `MarketList` 
+				WHERE `idProduct`=:idProduct";
 			$userListDetails = $dbh->prepare($sql);
 			$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
+			$userListDetails->bindValue(':idLogList', $user['id'], PDO::PARAM_INT);
 			$userListDetails->execute();
 			foreach($userListDetails as $oneDetails)
 			{
