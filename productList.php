@@ -33,7 +33,7 @@ if(isset($_GET['hashSession']))
 			echo '{';
 			foreach($userListDetails as $oneDetails)
 			{
-				echo '$oneDetails';
+				echo $oneDetails['idProduct'].':';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
