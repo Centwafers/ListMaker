@@ -16,7 +16,7 @@ if(isset($_GET['hashSession']))
 		$userList = $dbh->prepare($sql);
 		$userList->bindValue(':idLoglist', $user['id'], PDO::PARAM_INT);
 		$userList->execute();
-		
+		$json = array("product" => array());
 		foreach($userList as $oneProduct)
 		{
 			
@@ -28,7 +28,7 @@ if(isset($_GET['hashSession']))
 			$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
 			$userListDetails->bindValue(':idLogList', $user['id'], PDO::PARAM_INT);
 			$userListDetails->execute();
-				$json = array("product" => array());
+				
 		foreach($userListDetails as $oneDetails)
 			{
 			$row = array('idProduct'	=>$oneDetails['idProduct'],
