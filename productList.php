@@ -40,7 +40,7 @@ if(isset($_GET['hashSession']))
 					'type'		=>$oneDetails['type'],
 					'price'		=>$oneDetails['price'],
 					'unity'		=>$oneDetails['unity'],
-					'quantity'	=>$oneDetails['quantity'],
+					'quantity'	=>$oneDetails['quantity']
 				);
 				$json .= json_encode($array);
 				$json .= 'putain d\'accolade de merde';
