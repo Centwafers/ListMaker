@@ -31,7 +31,7 @@ if(isset($_GET['hashSession']))
 			$rows = array();
 		foreach($userListDetails as $oneDetails)
 			{
-			$rows[] = array('data' => $oneDetails);
+			$rows[] = array($oneDetails['idProduct'] => $oneDetails);
 			}
 			echo json_encode($rows);
 			//echo json_encode($userListDetails->fetchAll());
