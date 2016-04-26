@@ -28,12 +28,13 @@ if(isset($_GET['hashSession']))
 			$userListDetails->bindValue(':idProduct', $oneProduct['idProduct'], PDO::PARAM_INT);
 			$userListDetails->bindValue(':idLogList', $user['id'], PDO::PARAM_INT);
 			$userListDetails->execute();
-			$rows = array();
+			$json = array("product" => array());
 		foreach($userListDetails as $oneDetails)
 			{
-			$rows[] = array($oneDetails['idProduct'] => $oneDetails);
+			$row = $oneDetails;
+			array_push($json['product'],$row);
 			}
-			echo json_encode($rows);
+			echo json_encode($json);
 			//echo json_encode($userListDetails->fetchAll());
 			//$userListDetails=$userListDetails->fetchAll();
 			
