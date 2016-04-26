@@ -12,6 +12,7 @@ $(document).ready(function(){
 		dataType: 'json',
 		type: "GET",
 		success:function(data){
+			console.log(data);
 			var productL;
 			 for (var i = 0; i < data.length; i++) {
 					productL = $('<li><a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
