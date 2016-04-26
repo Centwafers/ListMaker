@@ -43,7 +43,7 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity'],
 				);
 				$json .= json_encode($array);
-				$json .= ';';
+				$json .= 'putain d\'accolade de merde';
 				
 			}
 			$json = substr($json, 0, -1);
