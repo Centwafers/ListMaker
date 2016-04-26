@@ -9,7 +9,7 @@ if(isset($_GET['idLoglist']))
 	$response = $dbh->prepare($sql);
 	$response->bindValue(':idLoglist', $_GET['idLoglist'], PDO::PARAM_INT);
 	$response->execute();
-	
+	echo $response;
 	foreach($response as $elem)
 	{
 		echo json_encode($elem);
