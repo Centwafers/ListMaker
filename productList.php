@@ -35,7 +35,7 @@ if(isset($_GET['hashSession']))
 			//$result = array();
 			foreach($userListDetails as $oneDetails)
 			{
-				if(strlen($json)>0)$json = substr($json, 0, -1);
+				if(strlen($json)>1)$json = substr($json, 0, -1);
 				$json .= '"'.$oneDetails['idProduct'].'"'.':';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
