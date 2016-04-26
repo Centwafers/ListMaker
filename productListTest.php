@@ -44,17 +44,13 @@ if(isset($_GET['hashSession']))
 					'unity'		=>$oneDetails['unity'],
 					'quantity'	=>$oneDetails['quantity']
 				);
-				 array_push($result,$array);
+				$json .= json_encode($array)
 				$json .= ', ';
 				
 			}
-			
-	
 			$json .= substr($json, 0, -1);
-
-
 		}
-		echo '}';
+		$json .= '}';
 	}
 }
 ?>
