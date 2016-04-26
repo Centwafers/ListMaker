@@ -31,10 +31,12 @@ if(isset($_GET['hashSession']))
 			
 			//$userListDetails=$userListDetails->fetchAll();
 			header("content-type:application/json");
+			echo json_encode($userListDetails->fetchAll(PDO::FETCH_NUM));
+
 			//echo json_encode($userListDetails);
 			
 		//	$json = '{';
-			$result = array();
+		/*	$result = array();
 			foreach($userListDetails as $oneDetails)
 			{
 				//if(strlen($json)>1)$json = substr($json, 0, -1);
