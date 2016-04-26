@@ -1,6 +1,5 @@
 $(document).ready(function(){
 var storage = window.localStorage;
-storage.setItem("connected",1);
 if(storage.getItem("connected")==1){
 $("#footer").append('<a href="#" id="disconnect" class="ui-btn ui-corner-all ui-icon-power ui-btn-icon-notext ui-nodisc-icon ui-alt-icon">Se déconnecter</a>');
 }
