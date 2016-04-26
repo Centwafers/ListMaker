@@ -9,10 +9,10 @@ if(isset($_GET['hashSession']))
 	$response = $dbh->prepare($sql);
 	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
 	$response->execute();
-	var_dump($response->rowCount());
+//	var_dump($response->rowCount());
 	$response = $response->fetch();
 	
-	var_dump($response);
+//	var_dump($response);
 	
 	
 	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
@@ -22,7 +22,15 @@ if(isset($_GET['hashSession']))
 	
 	foreach($response2 as $elem)
 	{
-		echo json_encode($elem);
+		
+		$sql = "SELECT * FROM MarketList WHERE idProduct = :idProduct";
+		$response3 = $dbh->prepare($sql);
+		$response3->bindValue(':idProduct', $elem['idProduct'], PDO::PARAM_INT);
+		$response3->execute();
+		foreach($response3 as $elem2)
+		{
+			echo json_encode($elem2);
+		}
 	}
 }
 ?>
