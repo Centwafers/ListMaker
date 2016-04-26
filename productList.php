@@ -5,13 +5,14 @@ require('dbConnexion.php');
 //if(isset($_GET['idLoglist']))
 if(isset($_GET['hashSession']))
 {
-	$sql = 'SELECT hashSession FROM LogList WHERE hashSession = :hashSession';
+	$sql = 'SELECT idLogList, hashSession FROM LogList WHERE hashSession = :hashSession';
 	$response = $dbh->prepare($sql);
-	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR)
+	$response->bindValue(':hashSession', $_GET['hashSession'], PDO::PARAM_STR);
 	$response->execute();
 	echo rowCount($response);
+	$response->fetch();
 	
-	$sql = 'SELECT idProduct, quantity FROM ConsumerList WHERE hashSession = :hashSession';
+	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE :idLogList = $response['idLogList']";
 	$response = $dbh->prepare($sql);
 	$response->bindValue(':idLoglist', $_GET['idLoglist'], PDO::PARAM_INT);
 	$response->execute();
