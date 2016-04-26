@@ -11,7 +11,7 @@ if(isset($_GET['idLoglist']))
 	$response->bindValue(':idLoglist', $_GET['idLoglist'], PDO::PARAM_INT);
 	$response->execute();
 	
-	foreach($response->fetch as $elem)
+	foreach($response as $elem)
 	{
 		echo json_encode($elem);
 	}
