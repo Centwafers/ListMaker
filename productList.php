@@ -33,7 +33,7 @@ if(isset($_GET['hashSession']))
 			echo '{';
 			foreach($userListDetails as $oneDetails)
 			{
-				echo "$oneDetails['idProduct'].:{";
+				echo $oneDetails['idProduct'].':{';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
@@ -43,7 +43,7 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity'],
 				);
 				echo json_encode($array);
-				echo '}';
+				echo '},';
 				
 			}
 			echo '}';
