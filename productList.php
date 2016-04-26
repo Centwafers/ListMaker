@@ -13,9 +13,9 @@ if(isset($_GET['hashSession']))
 	$response->fetch();
 	
 	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE :idLogList = $response['idLogList']";
-	$response = $dbh->prepare($sql);
-	$response->bindValue(':idLoglist', $_GET['idLoglist'], PDO::PARAM_INT);
-	$response->execute();
+	$response2 = $dbh->prepare($sql);
+	$response2->bindValue(':idLoglist', $response['idLogList'], PDO::PARAM_INT);
+	$response2->execute();
 	
 	foreach($response as $elem)
 	{
