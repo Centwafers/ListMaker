@@ -15,14 +15,14 @@ if(isset($_GET['hashSession']))
 	var_dump($response);
 	
 	
-//	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
-//	$response2 = $dbh->prepare($sql);
-//	$response2->bindValue(':idLoglist', $response['id'], PDO::PARAM_INT);
-//	$response2->execute();
+	$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
+	$response2 = $dbh->prepare($sql);
+	$response2->bindValue(':idLoglist', $response['id'], PDO::PARAM_INT);
+	$response2->execute();
 	
-//	foreach($response2 as $elem)
-//	{
-//		echo json_encode($elem);
-//	}
+	foreach($response2 as $elem)
+	{
+		echo json_encode($elem);
+	}
 }
 ?>
