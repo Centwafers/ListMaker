@@ -32,7 +32,7 @@ if(isset($_GET['hashSession']))
 			//$userListDetails=$userListDetails->fetchAll();
 			header("content-type:application/json");
 		
-json_encode($userListDetails->fetchAll(PDO::FETCH_ASSOC));
+echo json_encode($userListDetails->fetchAll(PDO::FETCH_ASSOC));
 			//echo json_encode($userListDetails);
 			
 		//	$json = '{';
