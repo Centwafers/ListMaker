@@ -15,8 +15,8 @@ $(document).ready(function(){
 			var obj = $.parseJSON(data);
 			console.log(obj)
 			var productL;
-			$.each(data, function(i, item) {
-				alert(item.PageName);
+			$.each(obj, function(i, item) {
+				
 					productL = $('<li><a href="#product-detail" data-transition="pop"><img src="./img/productPicture/bread.png">');
 					productL.append("<h2>"+item.nameProduct+"</h2>");
 					productL.append("<p>"+item.addedBy+"</p>");
