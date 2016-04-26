@@ -30,8 +30,10 @@ if(isset($_GET['hashSession']))
 			$userListDetails->execute();
 			//$userListDetails=$userListDetails->fetchAll();
 			//echo json_encode($userListDetails);
+			echo '{';
 			foreach($userListDetails as $oneDetails)
 			{
+				echo '$oneDetails';
 				$array = array(
 					'idProduct'	=>$oneDetails['idProduct'],
 					'nameProduct'	=>$oneDetails['nameProduct'],
@@ -41,7 +43,9 @@ if(isset($_GET['hashSession']))
 					'quantity'	=>$oneDetails['quantity'],
 				);
 				echo json_encode($array);
+				
 			}
+			echo '}';
 		}
 	}
 }
