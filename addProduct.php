@@ -27,13 +27,5 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
     echo $user['id'].' '.$_GET['idProduct'].' '.$_GET['quantity'].' '.$_GET['addedBy'].'</br>';
     $product->execute();
   }
-  else
-  {
-    echo 'produit ou compte inexistant';
-  }
-}
-else
-{
-  echo 'getPasOk';
 }
 ?>
