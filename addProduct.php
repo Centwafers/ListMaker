@@ -20,7 +20,7 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
     echo $response1['id'].' '.$_GET['idProduct'].' '.$_GET['quantity'].' '.$_GET['addedBy'].'</br>';
     //$sql = "INSERT INTO 'ConsumerList' VALUES(':idLogList', ':idProduct', ':quantity', ':addedBy')";
     $sql = "INSERT INTO `ConsumerList`(`idLoglist`, `idProduct`, `quantity`, `addedBy`) 
-            VALUES (':idLogList',':idProduct',':quantity',':addedBy')";
+            VALUES (:idLogList,:idProduct,:quantity,:addedBy)";
     $response = $dbh->prepare($sql);
     $response->bindValue(':idLogList', $response1['id']);
     $response->bindValue(':idProduct', $_GET['idProduct']);
