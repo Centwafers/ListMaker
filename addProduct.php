@@ -5,29 +5,27 @@ require('dbConnexion.php');
 if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quantity']) && isset($_GET['addedBy'])) {
 
   $sql = 'SELECT id, hashSession FROM LogList WHERE hashSession = :hashSession';
-  $response1 = $dbh->prepare($sql);
-  $response1->bindValue(':hashSession', $_GET['hashSession']);
-  $response1->execute();
+  $user = $dbh->prepare($sql);
+  $user->bindValue(':hashSession', $_GET['hashSession']);
+  $user->execute();
   
   $sql = 'SELECT idProduct FROM MarketList WHERE idProduct = :idProduct';
-  $response = $dbh->prepare($sql);
-  $response->bindValue(':idProduct', $_GET['idProduct'], PDO::PARAM_INT);
-  $response->execute();
+  $product = $dbh->prepare($sql);
+  $product->bindValue(':idProduct', $_GET['idProduct'], PDO::PARAM_INT);
+  $product->execute();
   
-  if($response1->rowCount()===1 && $response->rowCount()===1)
+  if($user->rowCount()===1 && $product->rowCount()===1)
   {
-    $response1 = $response1->fetch();
-    echo $response1['id'].' '.$_GET['idProduct'].' '.$_GET['quantity'].' '.$_GET['addedBy'].'</br>';
-    //$sql = "INSERT INTO 'ConsumerList' VALUES(':idLogList', ':idProduct', ':quantity', ':addedBy')";
+    $user = $user->fetch();
     $sql = "INSERT INTO `ConsumerList`(`idLoglist`, `idProduct`, `quantity`, `addedBy`) 
             VALUES (:idLogList,:idProduct,:quantity,:addedBy)";
-    $response = $dbh->prepare($sql);
-    $response->bindValue(':idLogList', $response1['id']);
-    $response->bindValue(':idProduct', $_GET['idProduct']);
-    $response->bindValue(':quantity', $_GET['quantity']);
-    $response->bindValue(':addedBy', $_GET['addedBy']);
-    echo $response1['id'].' '.$_GET['idProduct'].' '.$_GET['quantity'].' '.$_GET['addedBy'].'</br>';
-    echo $response->execute();
+    $product = $dbh->prepare($sql);
+    $product->bindValue(':idLogList', $user['id']);
+    $product->bindValue(':idProduct', $_GET['idProduct']);
+    $product->bindValue(':quantity', $_GET['quantity']);
+    $product->bindValue(':addedBy', $_GET['addedBy']);
+    echo $user['id'].' '.$_GET['idProduct'].' '.$_GET['quantity'].' '.$_GET['addedBy'].'</br>';
+    $product->execute();
   }
   else
   {
