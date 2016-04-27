@@ -26,7 +26,8 @@ $(document).ready(function(){
         else{
           ConnectionSuccessAnimation();
           var storage = window.localStorage;
-	      	storage.setItem("Session", data);
+          storage.setItem("connected", 1);
+	      	storage.setItem("session", data);
           document.location.href="home.html";
         }
       });
