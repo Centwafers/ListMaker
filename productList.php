@@ -11,7 +11,8 @@ if(isset($_GET['hashSession']))
 	if($user->rowCount()===1)
 	{
 		$sql = 'UPDATE LogList SET lastUse=CURRENT_TIMESTAMP WHERE hashSession = :hashSession';
-		$result = $dbh->prepare($sql)
+		$result = $dbh->prepare($sql);
+		$result->bindValue(':hashSession', $_GET['hashSession']);
 		$result->execute();
 		
 		$user = $user->fetch();
