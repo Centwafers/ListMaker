@@ -10,6 +10,10 @@ if(isset($_GET['hashSession']))
 	$user->execute();
 	if($user->rowCount()===1)
 	{
+		$sql = 'UPDATE LogList SET lastUse=CURRENT_TIMESTAMP WHERE hashSession = :hashSession';
+		$result = $dbh->prepare($sql)
+		$result->execute();
+		
 		$user = $user->fetch();
 		
 		$sql = "SELECT idProduct, quantity FROM ConsumerList WHERE idLogList = :idLoglist";
