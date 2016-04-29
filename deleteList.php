@@ -2,14 +2,15 @@
 
   require('dbConnexion.php');
   
-  echo time();
+  $now = time();
   
-  echo strtotime('1998-07-12 22:30:00').'</br>';
-  echo abs(time()-strtotime('1998-07-12 22:30:00')).'</br>';
   $sql = 'SELECT * FROM LogList';
   foreach($dbh->query($sql) as $row){
-    echo $row['lastUse'].'</br>';
-    echo strtotime($row['lastUse']).'</br></br>';
+    $result = (time()-strtotime($row['lastUse']))/60/60/24;
+    if($result>14)
+    {
+      echo strtotime($row['lastUse']).'</br></br>';
+    }
   }
 
   
