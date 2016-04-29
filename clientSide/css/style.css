@@ -1,3 +1,17 @@
+/*SPLASH*/
+#listMakerLogo{
+  opacity: 0;
+  width: 50%;
+  margin-top: 40%;
+}
+
+#stklLogo{
+  position: absolute;
+  width: 20%;
+  bottom: 5%;
+  left: 40%;
+}
+
 /*CONNEXION & INSCRIPTION*/
 #errorCreationMsg{
   visibility: hidden;
