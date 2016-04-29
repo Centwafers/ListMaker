@@ -1,3 +1,3 @@
 <?php
-	header ('Location: connection.html');
+	header ('Location: clientSide/connection.html');
 ?>
