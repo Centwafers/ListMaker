@@ -9,8 +9,15 @@
     $result = (time()-strtotime($row['lastUse']))/60/60/24;
     if($result>14)
     {
-      echo $row['id'];
-      echo strtotime($row['lastUse']).'</br></br>';
+      $sqlDel = 'DELETE FROM LogList WHERE id = :id';
+      $response = $dbh->prepare();
+      $response->bindValue(':id', $row['id']);
+      $response->execute();
+      
+      $sqlDel = 'DELETE FROM ConsumerList WHERE id = :id';
+      $response = $dbh->prepare();
+      $response->bindValue(':id', $row['id']);
+      $response->execute();
     }
   }
 
