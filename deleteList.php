@@ -11,12 +11,12 @@
     {
       $sqlDel = 'DELETE FROM LogList WHERE id = :id';
       $response = $dbh->prepare();
-      $response->bindValue(':id', $row['id']);
+      $response->bindValue(':id', $row['id'], , PDO::PARAM_INT);
       $response->execute();
       
       $sqlDel = 'DELETE FROM ConsumerList WHERE id = :id';
       $response = $dbh->prepare();
-      $response->bindValue(':id', $row['id']);
+      $response->bindValue(':id', $row['id'], , PDO::PARAM_INT);
       $response->execute();
     }
   }
