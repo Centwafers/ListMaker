@@ -9,7 +9,7 @@
   $sql = 'SELECT * FROM LogList';
   foreach($dbh->query($sql) as $row){
     echo $row['lastUse'].'</br>';
-    echo strtotime($response['lastUse']).'</br></br>';
+    echo strtotime($row['lastUse']).'</br></br>';
   }
 
   
