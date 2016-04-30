@@ -1,5 +1,5 @@
 <?php
-
+echo $_get['idProduct'];
 if(isset($_get['idProduct']))
 {
   $sql = 'SELECT * FROM MarketList WHERE idProduct = :idProduct';
