@@ -5,7 +5,7 @@ if (!isset($_GET['keyword'])) {
 	die();
 }else{
 $keyword = $_GET['keyword'];
-	$stmt = $dbh->prepare("SELECT id,nameProduct FROM `MarketList` WHERE nameProduct LIKE ?");
+	$stmt = $dbh->prepare("SELECT idProduct,nameProduct FROM `MarketList` WHERE nameProduct LIKE ?");
 
     $keyword = $keyword . '%';
     $stmt->bindParam(1, $keyword, PDO::PARAM_STR, 100);
