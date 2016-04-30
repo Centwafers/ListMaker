@@ -1,7 +1,13 @@
 $(document).ready(function(){
+var storage = window.localStorage;
 
-  $("#connectionBtn").click(function(){
-    var site = 'http://listmaker-stkl.esy.es/';
+if(storage.getItem("connected")==1 && (storage.getItem("session")!=undefined && storage.getItem("session")!=0)){
+  window.location.replace("home.html");
+}
+else
+{
+	$("#connectionBtn").click(function(){
+	var site = 'http://listmaker-stkl.esy.es/';
     var dossier = 'connection.php';
 
     var username = $("#username").val();
@@ -25,15 +31,18 @@ $(document).ready(function(){
         }
         else{
           ConnectionSuccessAnimation();
-          var storage = window.localStorage;
+		  storage = window.localStorage;
           storage.setItem("connected", 1);
-	      	storage.setItem("session", data);
-          document.location.href="home.html";
+	      storage.setItem("session", data);
+		  storage.setItem("name", username);
+		  
+          window.location.replace("home.html");
         }
       });
       return false; //pour que le formulaire ne se recharge pas !
     }
-  });
+});
+}
 
   function ConnectionErrorAnimation(btnID){
     var btn = $("#connectionBtn");
@@ -59,6 +68,6 @@ $(document).ready(function(){
     btn.animate({backgroundColor: green, borderColor: green}, 250);
     icon.text("");
     icon.addClass("fa fa-shopping-cart");
-  }
+}
 
 });
