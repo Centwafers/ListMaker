@@ -1,7 +1,7 @@
 <?php
 
 require('dbConnexion.php');
-echo $_get['idProduct'];
+echo $_get['idProduct'].'blabla';
 if (isset($_get['idProduct']))
 {
   $sql = 'SELECT * FROM MarketList WHERE idProduct = :idProduct';
