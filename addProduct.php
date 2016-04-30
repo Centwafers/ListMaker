@@ -17,7 +17,7 @@ if(isset($_GET['hashSession']) && isset($_GET['idProduct']) && isset($_GET['quan
   if($user->rowCount()===1 && $product->rowCount()===1)
   {
     $user = $user->fetch();
-    $sql = "INSERT INTO `ConsumerList`(`idLoglist`, `idProduct`, `quantity`, `addedBy`) 
+    $sql = "DELETE FROM ConsumerList WHERE idLogList=:idLogList and idProduct=:idProduct;INSERT INTO `ConsumerList`(`idLoglist`, `idProduct`, `quantity`, `addedBy`) 
             VALUES (:idLogList,:idProduct,:quantity,:addedBy)";
     $product = $dbh->prepare($sql);
     $product->bindValue(':idLogList', $user['id']);
