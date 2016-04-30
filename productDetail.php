@@ -6,7 +6,7 @@ if (isset($_GET['idProduct']))
 {
   $sql = 'SELECT * FROM MarketList WHERE idProduct = :idProduct';
   $product = $dbh->prepare($sql);
-  $product->bindValue(':idProduct', $_get['idProduct'], PDO::PARAM_INT);
+  $product->bindValue(':idProduct', $_GET['idProduct'], PDO::PARAM_INT);
   $product->execute();
   if ($product->rowCount()===1)
   {
