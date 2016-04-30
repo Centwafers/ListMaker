@@ -1,8 +1,9 @@
 <?php
 
 require('dbConnexion.php');
+
 header("Access-Control-Allow-Origin: *");
-//echo $_GET['idProduct'];
+
 if (isset($_GET['idProduct']))
 {
   $sql = 'SELECT * FROM MarketList WHERE idProduct = :idProduct';
@@ -14,13 +15,5 @@ if (isset($_GET['idProduct']))
     $product=$product->fetch();
     echo json_encode($product);
   }
-  else
-  {
-    echo 'existe pas';
-  }
-}
-else
-{
-  echo 'pas get';
 }
 ?>
