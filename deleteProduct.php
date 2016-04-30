@@ -1,5 +1,6 @@
 <?php
 require('dbConnexion.php');
+header("Access-Control-Allow-Origin: *");
 if(isset($_GET['hashSession']) && isset($_GET['idProduct'])) {
   $sql = 'SELECT id, hashSession FROM LogList WHERE hashSession = :hashSession';
   $response1 = $dbh->prepare($sql);
