@@ -11,5 +11,13 @@ if(isset($_get['idProduct']))
     $product=$product->fetch();
     echo json_encode($product);
   }
+  else
+  {
+    echo 'existe pas';
+  }
+}
+else
+{
+  echo 'pas get';
 }
 ?>
