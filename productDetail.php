@@ -1,6 +1,7 @@
 <?php
 
 require('dbConnexion.php');
+header("Access-Control-Allow-Origin: *");
 //echo $_GET['idProduct'];
 if (isset($_GET['idProduct']))
 {
