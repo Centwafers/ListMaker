@@ -43,10 +43,18 @@ document.getElementById("creationBtn").onclick = function blockForm() {
             },
             error: function(resultat, statut, erreur) {
                 creationErrorAnimation("Une erreur est survenue");
+                error();
                 //alert(erreur);
             }
         });
     }
+}
+
+function error() {
+    alert("Probleme de connexion veuillez relancer l'application");
+    storage.setItem("connected", 0);
+    storage.setItem("session", 0);
+    navigator.app.exitApp();
 }
 
 function creationErrorAnimation(msg) {

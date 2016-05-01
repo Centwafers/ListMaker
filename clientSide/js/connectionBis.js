@@ -1,3 +1,4 @@
+var storage = window.localStorage;
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -10,47 +11,54 @@ function onDeviceReady() {
         }
     }, false);
 }
+
+$(document).on("pagebeforecreate", "#connection", function(event) {
+    if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefined && storage.getItem("session") != 0)) window.location.replace("home.html");
+});
+
+function error() {
+    alert("Probleme de connexion veuillez relancer l'application");
+    storage.setItem("connected", 0);
+    storage.setItem("session", 0);
+    navigator.app.exitApp();
+}
 $(document).ready(function() {
+    $("#connectionBtn").click(function() {
+        var serverAdress = 'http://listmaker-stkl.esy.es/';
+        var file = 'connection.php';
 
-    var storage = window.localStorage;
+        var username = $("#username").val();
+        var listName = $("#listName").val();
+        var password = $.md5($("#password").val());
 
-    if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefined && storage.getItem("session") != 0)) {
-        window.location.replace("home.html");
-    } else {
-        $("#connectionBtn").click(function() {
-            var serverAdress = 'http://listmaker-stkl.esy.es/';
-            var file = 'connection.php';
+        if ((username.length === 0) || (listName.length === 0)) {
+            ConnectionErrorAnimation();
+        } else {
+            var get_fail = 'fail';
 
-            var username = $("#username").val();
-            var listName = $("#listName").val();
-            var password = $.md5($("#password").val());
+            $.post(serverAdress + file, {
+                    listName: listName,
+                    password: password
+                },
+                function(data, status) {
+                    if (data == get_fail) {
+                        ConnectionErrorAnimation();
+                    } else {
+                        ConnectionSuccessAnimation();
+                        storage = window.localStorage;
+                        storage.setItem("connected", 1);
+                        storage.setItem("session", data);
+                        storage.setItem("name", username);
 
-            if ((username.length === 0) || (listName.length === 0)) {
-                ConnectionErrorAnimation();
-            } else {
-                var get_fail = 'fail';
+                        window.location.replace("home.html");
+                    }
+                }).fail(function(xhr, textStatus, errorThrown) {
+                error();
+            });
+            return false; //pour que le formulaire ne se recharge pas !
+        }
+    });
 
-                $.post(serverAdress + file, {
-                        listName: listName,
-                        password: password
-                    },
-                    function(data, status) {
-                        if (data == get_fail) {
-                            ConnectionErrorAnimation();
-                        } else {
-                            ConnectionSuccessAnimation();
-                            storage = window.localStorage;
-                            storage.setItem("connected", 1);
-                            storage.setItem("session", data);
-                            storage.setItem("name", username);
-
-                            window.location.replace("home.html");
-                        }
-                    });
-                return false; //pour que le formulaire ne se recharge pas !
-            }
-        });
-    }
 
     function ConnectionErrorAnimation(btnID) {
         var btn = $("#connectionBtn");

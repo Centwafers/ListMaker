@@ -28,6 +28,13 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
         loadList();
     });
 
+    function error() {
+        alert("Probleme de connexion veuillez relancer l'application");
+        storage.setItem("connected", 0);
+        storage.setItem("session", 0);
+        navigator.app.exitApp();
+    }
+
     function loadList() {
         $('input[data-type="search"]').val("");
         $('input[data-type="search"]').trigger("keyup");
@@ -40,7 +47,7 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
             async: false,
             type: "GET",
             error: function(xhr, statusText) {
-                alert("Error: " + statusText);
+                error();
             },
             success: function(data) {
                 var obj = $.parseJSON(data);
@@ -65,6 +72,9 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
             data: 'idProduct=' + id,
             datatype: 'jsonp',
             type: "GET",
+            error: function(xhr, statusText) {
+                error();
+            },
             success: function(data) {
                 var obj = $.parseJSON(data);
                 $("#productDetail #idProduct").html(obj.idProduct);
@@ -74,12 +84,13 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
                 }
 
                 $("#productDetail #imageProductDetail").attr("src", serverAdress + "/img/productPicture/" + obj.image).attr("width", 100).attr("height", 100);
+                $.mobile.changePage("#productDetail", {
+                    transition: "slideup",
+                    changeHash: false
+                });
             }
         });
-        $.mobile.changePage("#productDetail", {
-            transition: "slideup",
-            changeHash: false
-        });
+
 
     }
 
@@ -90,6 +101,9 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
             data: 'hashSession=' + hashSession + '&idProduct=' + id,
             datatype: 'jsonp',
             type: "GET",
+            error: function(xhr, statusText) {
+                error();
+            },
             success: function(data) {
                 loadList();
             }
@@ -105,6 +119,9 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
                 data: 'idProduct=' + $("#productDetail #idProduct").text() + "&hashSession=" + hashSession + "&quantity=" + $("#quantityProductDetail").val() + "&addedBy=" + name,
                 datatype: 'text',
                 type: "GET",
+                error: function(xhr, statusText) {
+                    error();
+                },
                 success: function(data) {
                     loadList();
                     $.mobile.changePage("#home", {
