@@ -96,6 +96,16 @@ form{
   margin-left: 20%;
 }
 
+#promotion{
+  text-align: center;
+}
+
+ #promotionPicture{
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
 @media screen and (max-width: 450px) {
   #searchBarContainer{
     margin-right: 20%;
