@@ -52,7 +52,7 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
             success: function(data) {
                 var obj = $.parseJSON(data);
                 $.each(obj, function(i, item) {
-                    $("#listContent").append("<li id=\"" + item.idProduct + "\" ><a class=\"detail\" href=\"#\" data-transition=\"pop\" ><img src=\"" + serverAdress + "/img/productPicture/" + item.image + "\"><h2 class=\"topic\">" + item.nameProduct + "</h2><p>Ajouté par " + item.addedBy + "</p><span class=\"ui-li-count\">" + item.quantity + "</span></a><a href=\"#\" data-icon=\"delete\">Supprimer</a></li>");
+                    $("#listContent").append("<li id=\"" + item.idProduct + "\" ><a class=\"detail\" href=\"#\" data-transition=\"pop\" ><img src=\"" + serverAdress + "img/productPicture/" + item.image + "\"><h2 class=\"topic\">" + item.nameProduct + "</h2><p>Ajouté par " + item.addedBy + "</p><span class=\"ui-li-count\">" + item.quantity + "</span></a><a href=\"#\" data-icon=\"delete\">Supprimer</a></li>");
                     $('#listContent li:last a:first').bind("click", function(event, ui) {
                         loadDetails(item.idProduct);
                     });
