@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="css/dist/jquery.mobile-1.4.5.css">
     <link rel="stylesheet" href="css/dist/custom-css.min.css">
     <link rel="stylesheet" href="css/dist/jquery.mobile.icons.min.css">
-
     <!-- <link rel="stylesheet" href="css/dist/font-awesome.min.css"> -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="cordova.js"></script>
+    <script src="js/dist/jquery-1.12.0.min.js"></script>
+    <script src="js/dist/jquery-ui.min.js"></script>
+    <script src="js/dist/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/dist/jquery.md5.min.js"></script>
 
-		<link rel="stylesheet" href="css/style.css">
-<script src="cordova.js"></script>
-		<script src="js/dist/jquery-1.12.0.min.js"></script>
-		<script src="js/dist/jquery-ui.min.js"></script>
-		<script src="js/dist/jquery.mobile-1.4.5.min.js"></script>
+</head>
 
-		<script src="js/dist/jquery.md5.min.js"></script>
+<body>
 
-	</head>
-	<body>
-
-		<div data-role="page" id="connection">
-			<div data-role="header">
-				<h3>ListMaker</h3>
-			</div>
-			<div id="divForm" class="ui-content" data-role="main">
-				<form method="post">
-					<input id="username" placeholder="Nom d'utilisateur" type="text">
-					<input id="listName" placeholder="Nom de la liste" type="text">
-					<input id="password" placeholder="Mot de passe" type="password">
-          <a id="connectionBtn" class="ui-btn" type="submit"><span id="connectionBtnText">Connexion</span></a>
-				</form>
-				<div id="creationLink">
-          <h4 id="textNoList">Pas encore de liste?</h4>
-          <a href="#creation" id="creationLinkBtn" class="ui-btn">Créer une liste</a>
+    <div data-role="page" id="connection">
+        <div data-role="header">
+            <h3>ListMaker</h3>
         </div>
-			</div>
-		</div>
+        <div id="divForm" class="ui-content" data-role="main">
+            <form method="post">
+                <input id="username" placeholder="Nom d'utilisateur" type="text">
+                <input id="listName" placeholder="Nom de la liste" type="text">
+                <input id="password" placeholder="Mot de passe" type="password">
+                <a id="connectionBtn" class="ui-btn" type="submit"><span id="connectionBtnText">Connexion</span></a>
+            </form>
+            <div id="creationLink">
+                <h4 id="textNoList">Pas encore de liste?</h4>
+                <a href="#creation" id="creationLinkBtn" class="ui-btn">Créer une liste</a>
+            </div>
+        </div>
+    </div>
 
-		<div id="creation" data-role="page"></div>
+    <div id="creation" data-role="page"></div>
 
-		<script src="js/includeCreationList.js"></script>
+    <script src="js/includeCreationList.js"></script>
 
-		<script src="js/connectionBis.js"></script>
+    <script src="js/connectionBis.js"></script>
 
 
 
-		<!-- <script src="js/md5.min.js"></script> -->
-		<!-- <script src="js/connection.js"></script> -->
+    <!-- <script src="js/md5.min.js"></script> -->
+    <!-- <script src="js/connection.js"></script> -->
 
-	</body>
+</body>
+
 </html>
