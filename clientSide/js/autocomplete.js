@@ -1,5 +1,5 @@
 var MIN_LENGTH = 2;
-var serverAdress = 'http://listmaker-stkl.esy.es/';
+var serverAdress = 'https://52.37.194.80/';
 $(document).on("pageinit", "#home", function() {
     $("#autocomplete").on("filterablebeforefilter", function(e, data) {
         var $ul = $(this),

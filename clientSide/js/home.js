@@ -1,4 +1,4 @@
-var serverAdress = 'http://listmaker-stkl.esy.es/';
+var serverAdress = 'https://52.37.194.80/';
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {

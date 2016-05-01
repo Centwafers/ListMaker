@@ -1,6 +1,12 @@
 var storage = window.localStorage;
 document.addEventListener("deviceready", onDeviceReady, false);
+    $(document).ajaxStart(function() {
+        $.mobile.loading('show');
+    });
 
+    $(document).ajaxStop(function() {
+        $.mobile.loading('hide');
+    });
 function onDeviceReady() {
     document.addEventListener("backbutton", function(e) {
         if ($.mobile.activePage.is('connection.html') || $.mobile.activePage.is('#connection')) {
@@ -24,7 +30,7 @@ function error() {
 }
 $(document).ready(function() {
     $("#connectionBtn").click(function() {
-        var serverAdress = 'http://listmaker-stkl.esy.es/';
+        var serverAdress = 'https://52.37.194.80/';
         var file = 'connection.php';
 
         var username = $("#username").val();

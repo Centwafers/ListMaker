@@ -5,7 +5,7 @@ document.getElementById("connexion-btn").onclick = function blockForm(){
     var listName = document.getElementById("listName").value;
     var password = window.md5(document.getElementById('password').value); //le mdp ne doit jamais passer en clair sur le réseau
 
-    var serverAdress = 'http://listmaker-stkl.esy.es/';
+    var serverAdress = 'https://52.37.194.80/';
     var file = 'connexion.php';
 
     if(username.length===0)

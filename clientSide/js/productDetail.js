@@ -1,5 +1,5 @@
 $(document).ready(function(){
-var serverAdress = 'http://listmaker-stkl.esy.es/';
+var serverAdress = 'https://52.37.194.80/';
 var file = 'productDetail.php';
 var storage = window.localStorage;
 jQuery.ajax(
