@@ -81,15 +81,18 @@ form{
   text-align: center;
   position: fixed;
   z-index: 3;
-  bottom: 0;
+  bottom: -1px;
+  padding-bottom: 1px;
   width: 100%;
 }
 
-/*#header{
+#header{
   position: fixed;
   width: 100%;
   text-align: center;
-}*/
+  top:-1px;
+  padding-top:1px;
+}
 
 #searchForm{
   margin-top: 0;
