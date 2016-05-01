@@ -2,7 +2,7 @@
 #listMakerLogo{
   opacity: 0;
   width: 75%;
-  margin-top: 35%;
+  margin-top: 20%;
 }
 
 #stklLogo{
@@ -10,6 +10,10 @@
   width: 20%;
   bottom: 5%;
   left: 40%;
+}
+
+#coraLogo{
+  width: 20%;
 }
 
 /*CONNEXION & INSCRIPTION*/
