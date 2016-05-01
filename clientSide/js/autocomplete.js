@@ -1,5 +1,5 @@
 var MIN_LENGTH = 2;
-var site = 'http://listmaker-stkl.esy.es/';
+var serverAdress = 'http://listmaker-stkl.esy.es/';
 $(document).on("pageinit", "#home", function() {
             $("#autocomplete").on("filterablebeforefilter", function(e, data) {
                 var $ul = $(this),
@@ -11,7 +11,7 @@ $(document).on("pageinit", "#home", function() {
                     $ul.html("<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>");
                     $ul.listview("refresh");
                     $.ajax({
-                            url: site + "autocomplete.php",
+                            url: serverAdress + "autocomplete.php",
                             dataType: "json",
                             crossDomain: true,
                             data: {

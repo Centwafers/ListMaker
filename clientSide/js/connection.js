@@ -5,8 +5,8 @@ document.getElementById("connexion-btn").onclick = function blockForm(){
     var listName = document.getElementById("listName").value;
     var password = window.md5(document.getElementById('password').value); //le mdp ne doit jamais passer en clair sur le réseau
 
-    var site = 'http://listmaker-stkl.esy.es/';
-    var dossier = 'connexion.php';
+    var serverAdress = 'http://listmaker-stkl.esy.es/';
+    var file = 'connexion.php';
 
     if(username.length===0)
     {
@@ -26,7 +26,7 @@ document.getElementById("connexion-btn").onclick = function blockForm(){
 
         $.ajax(
         {
-            url : site+dossier,
+            url : serverAdress+file,
             type : 'POST',
             data : "listName="+listName+"&password="+password,
             dataType : 'HTML', // text ou JSON, à voir

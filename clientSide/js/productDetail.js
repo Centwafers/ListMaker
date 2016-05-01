@@ -1,10 +1,10 @@
 $(document).ready(function(){
-var site = 'http://listmaker-stkl.esy.es/';
-var dossier = 'productDetail.php';
+var serverAdress = 'http://listmaker-stkl.esy.es/';
+var file = 'productDetail.php';
 var storage = window.localStorage;
 jQuery.ajax(
 	{
-		url: site+dossier,
+		url: serverAdress+file,
 		data:'idProduct='+storage.getItem("idProduct"),
 		datatype : 'json',
 		type: "GET",

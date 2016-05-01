@@ -1,4 +1,18 @@
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady(){
+    document.addEventListener("backbutton", function(e){
+       if($.mobile.activePage.is('connection.html') || $.mobile.activePage.is('#connection')){
+           e.preventDefault();
+           navigator.app.exitApp();
+       }
+       else {
+           window.location.replace("home.html");
+       }
+    }, false);
+}
 $(document).ready(function(){
+
 var storage = window.localStorage;
 
 if(storage.getItem("connected")==1 && (storage.getItem("session")!=undefined && storage.getItem("session")!=0)){
@@ -7,8 +21,8 @@ if(storage.getItem("connected")==1 && (storage.getItem("session")!=undefined && 
 else
 {
 	$("#connectionBtn").click(function(){
-	var site = 'http://listmaker-stkl.esy.es/';
-    var dossier = 'connection.php';
+	var serverAdress = 'http://listmaker-stkl.esy.es/';
+    var file = 'connection.php';
 
     var username = $("#username").val();
     var listName = $("#listName").val();
@@ -20,7 +34,7 @@ else
     else{
       var get_fail = 'fail';
 
-      $.post(site+dossier,
+      $.post(serverAdress+file,
       {
         listName: listName,
         password: password

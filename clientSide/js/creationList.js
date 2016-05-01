@@ -4,8 +4,8 @@ document.getElementById("creationBtn").onclick = function blockForm(){
   var password = document.getElementById('passwordCreation').value; // à sécuriser : voir si on fait HTTPS ou Sécurité côté client.
 	var password2 = document.getElementById('password2Creation').value;
 
-	var site = 'http://listmaker-stkl.esy.es/';
-  var dossier = 'creationList.php';
+	var serverAdress = 'http://listmaker-stkl.esy.es/';
+  var file = 'creationList.php';
 
   if (listName.length===0){
     creationErrorAnimation("Champ vide");
@@ -32,7 +32,7 @@ document.getElementById("creationBtn").onclick = function blockForm(){
 	  var get_success = 'success';
 
     $.ajax({
-      url : site+dossier,
+      url : serverAdress+file,
       type : 'POST',
       data : "listName="+listName+"&password="+password+"&password2="+password2,
       dataType : 'HTML', // text ou JSON, à voir
