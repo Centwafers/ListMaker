@@ -1,12 +1,12 @@
 /*SPLASH*/
 #listMakerLogo{
   opacity: 0;
-  width: 50%;
-  margin-top: 40%;
+  width: 75%;
+  margin-top: 35%;
 }
 
 #stklLogo{
-  position: absolute;
+  position: fixed;
   width: 20%;
   bottom: 5%;
   left: 40%;
