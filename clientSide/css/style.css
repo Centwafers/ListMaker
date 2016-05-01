@@ -16,6 +16,21 @@
   width: 20%;
 }
 
+.header{
+  text-align: center;
+}
+
+#listMakerLogoHeaderConnection{
+  width: 20%;
+  margin-top: 3%;
+}
+
+#listMakerLogoHeaderCreation{
+  width: 20%;
+  margin-top: 3%;
+  margin-left: 40%;
+}
+
 /*CONNEXION & INSCRIPTION*/
 #errorCreationMsg{
   visibility: hidden;
