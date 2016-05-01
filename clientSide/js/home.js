@@ -76,18 +76,26 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
                 error();
             },
             success: function(data) {
-                var obj = $.parseJSON(data);
+				if (data.length == 0 ) {
+					alert("Ce produit n'existe pas");
+					$.mobile.changePage("#home", {
+                    transition: "slideup",
+                    changeHash: false
+                });
+				}else{
+					var obj = $.parseJSON(data);
                 $("#productDetail #idProduct").html(obj.idProduct);
                 $("#productDetail #nameProductDetail").html(obj.nameProduct);
                 if (obj.addedBy != undefined) {
                     $("#productDetail #addedByProductDetail").text("Ajouté par " + obj.addedBy);
                 }
-
                 $("#productDetail #imageProductDetail").attr("src", serverAdress + "/img/productPicture/" + obj.image).attr("width", 100).attr("height", 100);
                 $.mobile.changePage("#productDetail", {
                     transition: "slideup",
                     changeHash: false
                 });
+				}
+                
             }
         });
 
@@ -140,13 +148,7 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
             cordova.plugins.barcodeScanner.scan(
                 function(result) {
                     if (!result.cancelled) {
-                        alert(result.text);
-                        loadDetails(10);
-                        //loadDetails(result)
-                        $.mobile.changePage("#productDetail", {
-                            transition: "fade",
-                            changeHash: false
-                        });
+                        loadDetails(result.text);
                     } else {
                         alert("Le scan a été annulé");
                     }
