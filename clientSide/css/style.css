@@ -87,18 +87,14 @@ form{
 }
 
 #header{
-  position: fixed;
-  width: 100%;
-  text-align: center;
-  top:-1px;
-  padding-top:1px;
+  top: -1px;
+  padding-top: 1px;
 }
 
 #searchForm{
   margin-top: 0;
   margin-left: 20%;
 }
-
 #promotion{
   text-align: center;
 }
