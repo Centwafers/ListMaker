@@ -1,6 +1,6 @@
 <?php
   $host='mysql.hostinger.fr';
-  $user='u632642010_root'; //Changer et passer de root à utilisateur avec limite de droit
+  $user='u632642010_root';
 
   $pass='stkl_helb';
   $db='u632642010_stkl';
