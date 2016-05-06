@@ -24,7 +24,6 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
         $.mobile.loading('hide');
     });
     $(document).on("pagebeforeshow", "#home", function(event) {
-        //hashSession = "03b7f2c1d27fc3f8d45864e272a1649d";
         loadList();
     });
 
