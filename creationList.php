@@ -23,7 +23,7 @@ if(isset($_POST['listName']) && isset($_POST['password'])&& isset($_POST['passwo
 			$response = $dbh->prepare($sql);
 			$response->bindParam(':listName', $listName, PDO::PARAM_STR, 80);
 			$response->bindParam(':password', $password, PDO::PARAM_STR, 255);
-			$hash = md5('STKL20/20'.$listname);
+			$hash = md5('STKL20/20'.$listName);
 			$response->bindParam(':hash', $hash, PDO::PARAM_STR, 255);
 			$response->execute();
 			echo 'success';
