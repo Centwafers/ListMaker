@@ -50,19 +50,19 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
                 error();
             },
             success: function(data) {
-                if (data.length > 0) {
-                    var obj = $.parseJSON(data);
-                    $.each(obj, function(i, item) {
-                        $("#listContent").append("<li id=\"" + item.idProduct + "\" ><a class=\"detail\" href=\"#\" data-transition=\"pop\" ><img src=\"" + serverAdress + "img/productPicture/" + item.image + "\"><h2 class=\"topic\">" + item.nameProduct + "</h2><p>Ajouté par " + item.addedBy + "</p><span class=\"ui-li-count\">" + item.quantity + "</span></a><a href=\"#\" data-icon=\"delete\">Supprimer</a></li>");
-                        $('#listContent li:last a:first').bind("click", function(event, ui) {
-                            loadDetails(item.idProduct);
-                        });
-                        $('#listContent a:last').bind("click", function(event, ui) {
-                            deleteProduct(item.idProduct);
-                        });
-                        $("#listContent").listview('refresh');
+				if(data.length>7){
+                var obj = $.parseJSON(data);
+                $.each(obj, function(i, item) {
+                    $("#listContent").append("<li id=\"" + item.idProduct + "\" ><a class=\"detail\" href=\"#\" data-transition=\"pop\" ><img src=\"" + serverAdress + "img/productPicture/" + item.image + "\"><h2 class=\"topic\">" + item.nameProduct + "</h2><p>Ajouté par " + item.addedBy + "</p><span class=\"ui-li-count\">" + item.quantity + "</span></a><a href=\"#\" data-icon=\"delete\">Supprimer</a></li>");
+                    $('#listContent li:last a:first').bind("click", function(event, ui) {
+                        loadDetails(item.idProduct);
                     });
-                }
+                    $('#listContent a:last').bind("click", function(event, ui) {
+                        deleteProduct(item.idProduct);
+                    });
+                    $("#listContent").listview('refresh');
+                });
+				}
             }
         });
     }
@@ -78,26 +78,26 @@ if (storage.getItem("connected") == 1 && (storage.getItem("session") != undefine
                 error();
             },
             success: function(data) {
-                if (data.length == 0) {
-                    alert("Ce produit n'existe pas");
-                    $.mobile.changePage("#home", {
-                        transition: "slideup",
-                        changeHash: false
-                    });
-                } else {
-                    var obj = $.parseJSON(data);
-                    $("#productDetail #idProduct").html(obj.idProduct);
-                    $("#productDetail #nameProductDetail").html(obj.nameProduct);
-                    if (obj.addedBy != undefined) {
-                        $("#productDetail #addedByProductDetail").text("Ajouté par " + obj.addedBy);
-                    }
-                    $("#productDetail #imageProductDetail").attr("src", serverAdress + "/img/productPicture/" + obj.image).attr("width", 100).attr("height", 100);
-                    $.mobile.changePage("#productDetail", {
-                        transition: "slideup",
-                        changeHash: false
-                    });
+				if (data.length == 0 ) {
+					alert("Ce produit n'existe pas");
+					$.mobile.changePage("#home", {
+                    transition: "slideup",
+                    changeHash: false
+                });
+				}else{
+					var obj = $.parseJSON(data);
+                $("#productDetail #idProduct").html(obj.idProduct);
+                $("#productDetail #nameProductDetail").html(obj.nameProduct);
+                if (obj.addedBy != undefined) {
+                    $("#productDetail #addedByProductDetail").text("Ajouté par " + obj.addedBy);
                 }
-
+                $("#productDetail #imageProductDetail").attr("src", serverAdress + "/img/productPicture/" + obj.image).attr("width", 100).attr("height", 100);
+                $.mobile.changePage("#productDetail", {
+                    transition: "slideup",
+                    changeHash: false
+                });
+				}
+                
             }
         });
 
