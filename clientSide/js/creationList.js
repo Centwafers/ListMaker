@@ -24,7 +24,7 @@ document.getElementById("creationBtn").onclick = function blockForm() {
         // return alert("Votre mot de passe est beaucoup trop court"); // à modifier si MD5 côté client
     } 
     else if (!(password == password2)) {
-        creationErrorAnimation("Les mots de passe sont différents");
+        creationErrorAnimation("Les mots de passe doivent être identiques");
         // return alert("Les deux mots de passes ne correspondent pas");
     } 
     else {
