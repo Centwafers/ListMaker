@@ -8,7 +8,7 @@ document.getElementById("creationBtn").onclick = function blockForm() {
     var file = 'creationList.php';
 
     if (listName.length === 0) {
-        creationErrorAnimation("Veuillez remplir tous les champs");
+        creationErrorAnimation("Veuillez remplir tous les champs du formulaire");
         // return alert("Veuillez entrer le nom de votre liste");
     } 
     else if (listName.length < 8) {
@@ -16,7 +16,7 @@ document.getElementById("creationBtn").onclick = function blockForm() {
         // return alert("Le nom de la liste doit comporter au moins 3 caractères");
     } 
     else if (password.length === 0) {
-        creationErrorAnimation("Veuillez remplir tous les champs");
+        creationErrorAnimation("Veuillez remplir tous les champs du formulaire");
         // return alert("Veuillez entrer votre mot de passe");
     } 
     else if (password.length < 8) {
