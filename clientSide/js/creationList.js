@@ -8,21 +8,26 @@ document.getElementById("creationBtn").onclick = function blockForm() {
     var file = 'creationList.php';
 
     if (listName.length === 0) {
-        creationErrorAnimation("Champ vide");
+        creationErrorAnimation("Veuillez remplir tous les champs");
         // return alert("Veuillez entrer le nom de votre liste");
-    } else if (listName.length < 3) {
-        creationErrorAnimation("Nom trop court");
+    } 
+    else if (listName.length < 8) {
+        creationErrorAnimation("Le nom de la liste doit comporter au moins 8 caractères");
         // return alert("Le nom de la liste doit comporter au moins 3 caractères");
-    } else if (password.length === 0) {
-        creationErrorAnimation("Champ vide");
+    } 
+    else if (password.length === 0) {
+        creationErrorAnimation("Veuillez remplir tous les champs");
         // return alert("Veuillez entrer votre mot de passe");
-    } else if (password.length < 3) {
-        creationErrorAnimation("Mot de passe trop court");
+    } 
+    else if (password.length < 8) {
+        creationErrorAnimation("Le mot de passe doit comporter au moins 8 caractères");
         // return alert("Votre mot de passe est beaucoup trop court"); // à modifier si MD5 côté client
-    } else if (!(password == password2)) {
-        creationErrorAnimation("Mots de passe différents");
+    } 
+    else if (!(password == password2)) {
+        creationErrorAnimation("Les mots de passe sont différents");
         // return alert("Les deux mots de passes ne correspondent pas");
-    } else {
+    } 
+    else {
 
         var get_success = 'success';
 
